@@ -1,0 +1,54 @@
+<app-breadcrumb [title]="'detailProfile' | translate" [items]="['Profiles' | translate]"
+  [active_item]="'detailProfile' | translate"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="card">
+
+
+    <div class="card-header text-end " style="justify-content : text-end ;">
+
+
+      <a *ngIf="privilege.modification" ngbTooltip="{{ 'modifier' | translate}}" [routerLink]="['/Profile/editProfile', ProfileItem?.id]"
+        class="btn  btn-sm"
+        style="background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: orange;  ">
+        <i class="fa fa-pencil fa-lg" style="color: orange; margin-top: 13px; margin-left: -6px;"></i></a>
+      <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Profile']" class="btn  btn-sm"
+        style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
+        <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
+
+
+    </div>
+
+    <form class="form theme-form" name="form" action="post">
+
+
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'libelle' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="libelle"
+                  name="libelle" value="{{ProfileItem?.libelle}}" disabled="true" />
+              </div>
+            </div>
+
+
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'description' |
+                translate}}:</label>
+              <div class="col-sm-7">
+                <textarea class="form-control " style="background-color: white;" id="exampleFormControlInput5"
+                  type="text" placeholder="---" value="{{ProfileItem?.description}}" disabled="true"> </textarea>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

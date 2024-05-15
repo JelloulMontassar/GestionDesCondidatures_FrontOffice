@@ -1,0 +1,50 @@
+<app-breadcrumb [title]="'Module'" [items]="['other']" [active_item]="'Module'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header" style="justify-content : end ; display: grid;">
+            <a class="btn  btn-sm"
+            style=" background-color: #f7f7f7; height: 60px; border: solid; border-width: 2px;  border-color: green; "
+            (click)="addModule()"> <i class="fa fa-plus fa-lg" style="color: green; margin-top: 18px; "></i></a>
+
+        </div>
+        <div class="card-body custom-datatable noscroll">
+          <div class="custom-datatable table-responsive">
+            <table class="table card-table table-vcenter text-nowrap">
+              <thead>
+                <tr>
+                  <th scope="col" sortable="name" >libelle</th>
+                  <th scope="col" sortable="name" >code</th>
+                  <th scope="col" sortable="position" >active</th>
+
+                  <th scope="col" sortable="position" >entreprise</th>
+                  
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of tableItem ">
+                  <td>{{ item.libelle }}    </td>
+                  <td>{{ item.code }}    </td>
+                  <td>
+                    <span *ngIf="item.active; else non">oui</span>
+                    <ng-template #non>non</ng-template>
+                  </td>
+                  <td>{{ item.entreprise.libelle }}    </td>
+                 
+                  <td class="text-end"> 
+                    <a class="btn btn-light btn-sm" [routerLink]="['/Module/viewModule', item.id]"><i class="fa fa-search-plus"></i> </a><a class="icon" ></a>
+                    <a class="btn btn-danger btn-sm" (click)="onSelect(item.id)" style="margin-left: 15px;" ><i class="fa fa-trash" ></i> </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

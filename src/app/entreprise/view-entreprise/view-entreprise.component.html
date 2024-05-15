@@ -1,0 +1,129 @@
+<app-breadcrumb [items]="['Entreprises' | translate]" [active_item]="'detailEntreprise' | translate"></app-breadcrumb>
+<div class="container-fluid">
+    <div class="card">
+
+
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-weight: bold; font-size: 24px;">
+                {{ 'detailEntreprise' | translate }}
+            </div>
+            <div>
+                <a *ngIf="suivre" ngbTooltip="{{ 'modifier' | translate}}"
+                    [routerLink]="['/Entreprise/editEntreprise', EntrepriseItem?.id]" class="btn  btn-sm"
+                    style="background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: orange;  ">
+                    <i class="fa fa-pencil fa-lg" style="color: orange; margin-top: 13px; margin-left: -6px;"></i></a>
+                <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Entreprise']" class="btn  btn-sm"
+                    style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
+                    <i class="fa fa-rotate-left fa-lg"
+                        style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
+            </div>
+        </div>
+
+
+        <form class="form theme-form" name="form" action="post">
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <div class="col-sm-7">
+                                <img *ngIf="EntrepriseItem?.logo" src="./images/{{EntrepriseItem?.logo}}" alt="Image"
+                                    style="width: 250px;height: 250px; margin-left: 50%;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                                'libelle' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " type="text" placeholder="libelle"
+                                    value="{{EntrepriseItem?.libelle}}" disabled="true" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                                'matriculeFiscale' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput5" type="text"
+                                    placeholder="matriculeFiscale" value="{{EntrepriseItem?.matriculeFiscale}}"
+                                    disabled="true" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                                'representantLegal' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput5" type="text"
+                                    placeholder="representantLegal" value="{{EntrepriseItem?.representantLegal}}"
+                                    disabled="true" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput50">{{
+                                'telephone' | translate}}:</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput50" type="text"
+                                    placeholder="telephone" value="{{EntrepriseItem?.telephone}}" disabled="true" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                                'fax' | translate}}:</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="fax"
+                                    value="{{EntrepriseItem?.fax}}" disabled="true" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                                'codePostal' | translate}}:</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput5" type="text"
+                                    placeholder="codePostal" value="{{EntrepriseItem?.codePostal}}" disabled="true" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                                'siteWeb' | translate}}:</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput5" type="text"
+                                    placeholder="siteWeb" value="{{EntrepriseItem?.siteWeb}}" disabled="true" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                                'email' | translate}}:</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput5" type="text"
+                                    placeholder="email" value="{{EntrepriseItem?.email}}" disabled="true" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                                'adresse' | translate}}:</label>
+                            <div class="col-sm-7">
+                                <textarea class="form-control " style="background-color: white;"
+                                    id="exampleFormControlInput5" type="text" placeholder="adresse"
+                                    value="{{EntrepriseItem?.adresse}}" disabled="true"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                                'description' | translate}}:</label>
+                            <div class="col-sm-7">
+                                <textarea class="form-control " style="background-color: white;"
+                                    id="exampleFormControlInput5" type="text" placeholder="description"
+                                    value="{{EntrepriseItem?.description}}" disabled="true"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

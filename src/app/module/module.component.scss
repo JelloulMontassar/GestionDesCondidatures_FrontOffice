@@ -1,0 +1,19 @@
+table.card-table {
+    table-layout: auto;
+  }
+  
+  table.card-table th,
+  table.card-table td:not(:last-child) {
+    text-align: center; /* Center the text in the cells */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any overflowing text */
+    text-overflow: ellipsis; /* Show an ellipsis (...) when text overflows */
+  }
+  
+  table.card-table td:last-child {
+    width: 20%; /* Set the width of the last column to 20% */
+    text-align: center; /* Center the text in the cells */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any overflowing text */
+    text-overflow: ellipsis; /* Show an ellipsis (...) when text overflows */
+  }

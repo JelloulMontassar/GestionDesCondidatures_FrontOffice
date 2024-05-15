@@ -1,0 +1,111 @@
+<app-breadcrumb  [items]="['Utilisateurs' | translate]"
+  [active_item]="'detailUtilisateur' | translate"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="card">
+
+ 
+
+    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="font-weight: bold; font-size: 24px;">
+        {{ 'detailUtilisateur' | translate }}
+      </div>
+      <div>
+        <a *ngIf="(privilege.modification && UtilisateurItem?.profile?.libelle != 'Super Admin') || (privilege.modification && SuperAdminPrivilege)" ngbTooltip="{{ 'modifier' | translate}}"
+        [routerLink]="['/Utilisateur/editUtilisateur', UtilisateurItem?.id]" class="btn  btn-sm"
+        style="background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: orange;  ">
+        <i class="fa fa-pencil fa-lg" style="color: orange; margin-top: 13px; margin-left: -6px;"></i></a>
+      <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Utilisateur']" class="btn  btn-sm"
+        style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
+        <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
+     </div>
+    </div>
+
+
+
+
+    <form class="form theme-form">
+<!--       <div class="card-header text-end">
+      </div> -->
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            
+
+            <div class="mb-3 row">
+              <div class="col-sm-7">
+                
+                <img  *ngIf="UtilisateurItem?.image" src="./images/{{UtilisateurItem?.image}}"  alt="Image"  style="width: 400px;height: 400px;margin-left: 30%;" />
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'nom' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" value="{{UtilisateurItem?.nom}}"
+                  disabled="true" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'prenom' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text"
+                  value="{{UtilisateurItem?.prenom}}" disabled="true" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'email' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" value="{{UtilisateurItem?.email}}"
+                  disabled="true" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'dateNaissance' |
+                translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text"
+                  value="{{UtilisateurItem?.dateNaissance }}" disabled="true" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'entreprise' |
+                translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="representantLegal"
+                  value="{{UtilisateurItem?.libelleEntrepriseEnCours}}" disabled="true" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'profile' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="representantLegal"
+                  value="{{UtilisateurItem?.profile.libelle}}" disabled="true" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'poste' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="representantLegal"
+                  value="{{UtilisateurItem?.poste.libelle}}" disabled="true" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'activer' | translate }}:</label>
+              <div class="media col-sm-7">
+                <div class="media-body icon-state switch-outline">
+                  <label class="switch">
+                    <input type="checkbox"   [checked]="UtilisateurItem?.activer" disabled="true">
+                    <span class="switch-state bg-primary"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

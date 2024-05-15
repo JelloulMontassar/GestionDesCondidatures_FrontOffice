@@ -1,0 +1,178 @@
+<app-breadcrumb  [items]="['Profiles' | translate]"
+  [active_item]="'modifierProfile' | translate"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="card">
+      <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-weight: bold; font-size: 24px;">
+          {{ 'modifierProfile' | translate }}
+        </div>
+        <div>
+          <button ngbTooltip="{{ 'enregistrer' | translate}}" (click)="modifierProfile()" class="btn  btn-sm"
+          [disabled]="ProfileForm.invalid"
+          style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: cornflowerblue;  ">
+          <i class="fa fa-save fa-lg" style="color: cornflowerblue;  margin-left: -6px;"></i></button>
+        <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Profile']" class="btn  btn-sm"
+          style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
+          <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
+      </div>
+      </div>
+
+
+    <form class="form theme-form" [formGroup]="ProfileForm">
+    
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'libelle' | translate}}:*</label>
+              <div class="col-sm-7">
+                <input class="form-control " type="text" placeholder="libelle"
+                  formControlName="libelle" [ngClass]="{'is-invalid':libelle.errors && libelle.touched}" />
+                <div *ngIf="libelle.invalid && (libelle.dirty || libelle.touched)">
+                  <div *ngIf="libelle.errors.libelleExist" style="color: red;  font-weight: bold;">profil déjà pris
+                  </div>
+                  <div *ngIf="libelle.errors.required" style="color: red;  font-weight: bold;">champs obligatoire</div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'description' | translate}}:</label>
+              <div class="col-sm-7">
+                <textarea class="form-control "  type="text" placeholder="---"
+                  formControlName="description"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+
+  <div class="card">
+    <div class="card-header">
+      <h5>{{'Privilege' | translate}}</h5>
+    </div>
+
+
+
+    <div class="card-body">
+      <div class="custom-datatable table-responsive">
+        <table class="table card-table table-vcenter text-nowrap">
+          <thead>
+            <tr>
+              <th scope="col">{{'Modules' | translate}}</th>
+              <th scope="col">{{'sousModule' | translate}}</th>
+              <th scope="col">{{'Lecture' | translate}}:</th>
+              <th scope="col">{{'Creation' | translate}}:</th>
+              <th scope="col">{{'Modification' | translate}}:</th>
+              <th scope="col">{{'Supression' | translate}}:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let item of PrivilegeItem; let i = index">
+              <tr *ngIf="i === 0 || item.module !== PrivilegeItem[i - 1].module">
+                <td [attr.rowspan]="getRowspan(item.module)">{{ item.module | translate }}</td>
+                <td>{{ item.libelle | translate }}</td>
+                <td>
+
+                  <div class="media" *ngIf="item.visibleLecture && item.visibleLectureSuperAdmin">
+                    <div class="media-body  icon-state switch-outline">
+                      <label class="switch">
+                        <input type="checkbox" [checked]="item.lecture" (change)="onChangeLecture(i)" >
+                        
+                        <span class="switch-state bg-primary"></span>
+                      </label>
+                    </div>
+                  </div>
+                </td>
+                <td>  <div class="media" *ngIf="item.visibleCreation && item.visibleCreationSuperAdmin">
+                  <div class="media-body  icon-state switch-outline">
+                    <label class="switch">
+                      <input type="checkbox" [checked]="item.creation"  (change)="onChangeCreation(i)">
+                      <span class="switch-state bg-primary"></span>
+                    </label>
+                  </div>
+                </div></td>
+                <td>   <div class="media" *ngIf="item.visibleModification && item.visibleModificationSuperAdmin">
+                  <div class="media-body  icon-state switch-outline">
+                    <label class="switch">
+                      <input type="checkbox" [checked]="item.modification" (change)="onChangeModification(i)" >
+                      
+                      <span class="switch-state bg-primary"></span>
+                    </label>
+                  </div>
+                </div></td>
+                <td>  <div class="media" *ngIf="item.visibleSuppresion && item.visibleSuppresionSuperAdmin">
+                  <div class="media-body  icon-state switch-outline">
+                    <label class="switch">
+                      <input type="checkbox"  [checked]="item.supression"  (change)="onChangeSupression(i)">
+                      
+                      <span class="switch-state bg-primary"></span>
+                    </label>
+                  </div>
+                </div></td>
+              </tr>
+              <tr *ngIf="i !== 0 && item.module === PrivilegeItem[i - 1].module">
+                <td>{{ item.libelle | translate}}</td>
+                <td>  
+              
+                <div class="media" *ngIf="item.visibleLecture && item.visibleLectureSuperAdmin">
+                  <div class="media-body  icon-state switch-outline">
+                    <label class="switch">
+                      <input type="checkbox" [checked]="item.lecture" (change)="onChangeLecture(i)" >
+                      
+                      <span class="switch-state bg-primary"></span>
+                    </label>
+                  </div>
+                </div>
+              
+              </td>
+                <td>
+                  <div class="media" *ngIf="item.visibleCreation && item.visibleCreationSuperAdmin">
+                    <div class="media-body  icon-state switch-outline">
+                      <label class="switch">
+                        <input type="checkbox" [checked]="item.creation"  (change)="onChangeCreation(i)">
+                        
+                        <span class="switch-state bg-primary"></span>
+                      </label>
+                    </div>
+                  </div>
+               </td>
+                <td>
+                  <div class="media" *ngIf="item.visibleModification && item.visibleModificationSuperAdmin">
+                    <div class="media-body  icon-state switch-outline">
+                      <label class="switch">
+                        <input type="checkbox" [checked]="item.modification" (change)="onChangeModification(i)" >
+                        
+                        <span class="switch-state bg-primary"></span>
+                      </label>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="media" *ngIf="item.visibleSuppresion && item.visibleSuppresionSuperAdmin">
+                    <div class="media-body  icon-state switch-outline">
+                      <label class="switch">
+                        <input type="checkbox"  [checked]="item.supression"  (change)="onChangeSupression(i)">
+                        
+                        <span class="switch-state bg-primary"></span>
+                      </label>
+                    </div>
+                  </div>
+                 </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

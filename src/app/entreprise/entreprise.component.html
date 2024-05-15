@@ -1,0 +1,107 @@
+<app-breadcrumb  [active_item]="'Entreprises' | translate"></app-breadcrumb>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-weight: bold; font-size: 24px;">
+            {{ 'Entreprise' | translate }}
+          </div>
+          <div>
+            <a *ngIf="suivre" ngbTooltip="{{ 'ajouter' | translate }}" class="btn btn-sm"
+              style=" background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px; border-color: green; margin-right: 10px;"
+              (click)="addEntreprise()">
+              <i class="fa fa-plus fa-lg" style="color: green; margin-top: 13px; margin-left: -6px;"></i>
+            </a>
+            <a *ngIf="(suivre  && selectedItem != 0 )"
+              [ngbTooltip]="'supprimer' | translate" class="btn btn-sm"
+              (click)="openDelete(contentDelete, selectedItem?.id)"
+              style="background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px; border-color: red;">
+              <i class="fa fa-trash" style="color: red; margin-top: 13px; margin-left: -6px;"></i>
+            </a>
+               </div>
+        </div>
+
+
+
+        <div class="card-body custom-datatable noscroll">
+          <div class="custom-datatable table-responsive">
+
+
+
+            <div class="mat-elevation-z8">
+              <div class="text-end">
+                <mat-form-field>
+                  <mat-label>{{ 'recherche' | translate}}</mat-label>
+                  <input matInput placeholder="{{ 'recherche' | translate}}" (keyup)="Filterchange($event)">
+                </mat-form-field>
+              </div>
+              <table mat-table matSort [dataSource]="dataSource" class="my-table">
+                <ng-container matColumnDef="select">
+                  <th mat-header-cell *matHeaderCellDef style="width: 10px;"></th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-radio-button [value]="element" (change)="onRadioChange(element)"></mat-radio-button>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="photo">
+                  <th mat-header-cell *matHeaderCellDef> {{ 'Photo' | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> <img src="./images/{{ element.logo }}" alt="Image" style="width: 50px; height: 50px;" /> </td>
+                </ng-container>
+
+                <ng-container matColumnDef="libelle">
+                  <th mat-header-cell mat-sort-header *matHeaderCellDef> {{ 'libelle' | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element.libelle}} </td>
+                </ng-container>
+                <ng-container matColumnDef="matriculeFiscale">
+                  <th mat-sort-header mat-header-cell *matHeaderCellDef> {{ 'matriculeFiscale' | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element.matriculeFiscale}} </td>
+                </ng-container>
+                <ng-container matColumnDef="representantLegal">
+                  <th mat-sort-header mat-header-cell *matHeaderCellDef> {{ 'representantLegal' | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element.representantLegal}} </td>
+                </ng-container>
+                <ng-container matColumnDef="dateCreation">
+                  <th mat-sort-header mat-header-cell *matHeaderCellDef> {{ 'dateCreation' | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element.dateCreation}} </td>
+                </ng-container>
+                <ng-container matColumnDef="action">
+                  <th mat-header-cell *matHeaderCellDef> </th>
+                  <td mat-cell *matCellDef="let element" class="text-end">
+                    <a ngbTooltip="{{ 'Detail' | translate}}" class="btn btn-light btn-sm"
+                      style="width: 10px; height: 40px;" [routerLink]="['/Entreprise/viewEntreprise', element.id]"><i
+                        class="fa fa-search-plus" style="margin-top: 7px;margin-left: -7px;"></i> </a>
+                  
+                  </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <ng-template #contentDelete let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">{{ 'confirmerSuppresion' | translate}}</h4>
+    </div>
+    <div class="modal-body">
+      <p>{{ 'msgSuppresion' | translate}}</p>
+      <p *ngIf="verifierList" style="color: red;"> il doit supprimer les domaines de cet entreprise avant supprimer
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button *ngIf="!verifierList" type="button" class="btn btn-outline-success" (click)="onSelect()"><i
+          class="fa fa-check"></i></button>
+      <button type="button" class="btn btn-outline-danger" (click)="modal.dismiss('Cross click')"><i
+          class="fa fa-times"></i></button>
+    </div>
+  </ng-template>

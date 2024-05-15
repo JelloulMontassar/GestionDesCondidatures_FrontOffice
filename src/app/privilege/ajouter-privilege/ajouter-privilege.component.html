@@ -1,0 +1,144 @@
+<app-breadcrumb [title]="'ajouterPrivilege' | translate" [items]="['Privileges' | translate]" [active_item]="'ajouterPrivilege' | translate"></app-breadcrumb>
+<div class="container-fluid">
+<div class="card">
+  
+  <form class="form theme-form" [formGroup]="PrivilegeForm">
+    <div class="card-header text-end">
+      <h5></h5>
+      <button ngbTooltip="{{ 'enregistrer' | translate}}" (click)="ajouterPrivilege()" class="btn  btn-sm"
+      [disabled]="PrivilegeForm.invalid"
+      style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: cornflowerblue;  ">
+      <i class="fa fa-save fa-lg" style="color: cornflowerblue;  margin-left: -6px;"></i></button>
+    <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Privilege']" class="btn  btn-sm"
+      style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
+      <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
+    </div>
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+              'libelle' | translate}}:*</label>
+            <div class="col-sm-7">
+              <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                formControlName="libelle" [ngClass]="{'is-invalid':libelle.errors && libelle.touched}" />
+              <div *ngIf="libelle.invalid && (libelle.dirty || libelle.touched)">
+                <div *ngIf="libelle.errors.privilegeTaken" style="color: red;  font-weight: bold;">Domaine déjà pris
+                </div>
+                <div *ngIf="libelle.errors.required" style="color: red;  font-weight: bold;">champs obligatoire</div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+              'module' | translate}}:*</label>
+            <div class="col-sm-7">
+              <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+              formControlName="module" [ngClass]="{'is-invalid':module.errors && module.touched}" />
+              <div *ngIf="module.invalid && (module.dirty || module.touched)">
+                 <div *ngIf="module.errors.required" style="color: red;  font-weight: bold;">champs obligatoire</div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'profile' |
+              translate}}:*</label>
+            <div class="col-sm-7">
+              <ng-select [items]="ProfileItem" [ngClass]="{'is-invalid':profile.errors && profile.touched}"
+                bindLabel="libelle" bindValue="libelle" formControlName="profile" placeholder="---"
+                class="js-example-basic-single">
+              </ng-select>
+              <div *ngIf="profile.invalid && (profile.dirty || profile.touched)">
+                <div *ngIf="profile.errors.required" style="color: red;  font-weight: bold;">champs obligatoire
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+              'nbPrivilege' | translate}}:</label>
+            <div class="col-sm-7">
+              <input class="form-control " id="exampleFormControlInput5" type="number" placeholder="---"
+              formControlName="nbPrivelege" />
+           </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+              'classement' | translate}}:</label>
+            <div class="col-sm-7">
+              <input class="form-control " id="exampleFormControlInput5" type="number" placeholder="---"
+              formControlName="order" />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+              'classementModule' | translate}}:</label>
+            <div class="col-sm-7">
+              <input class="form-control " id="exampleFormControlInput5" type="number" placeholder="---"
+              formControlName="orderModule" />
+          </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="media">
+            <label class="col-sm-3 col-form-label">{{ 'creation' | translate}}:</label>
+            <div class="media-body col-sm-7 switch-lg icon-state">
+              <label class="switch">
+                <input type="checkbox" formControlName="creation"><span class="switch-state"></span>
+              </label>
+            </div>
+          </div>
+          <div class="media">
+            <label class="col-sm-3 col-form-label">{{ 'modification' | translate}}:</label>
+            <div class="media-body col-sm-7 switch-lg icon-state">
+              <label class="switch">
+                <input type="checkbox" formControlName="modification"><span class="switch-state"></span>
+              </label>
+            </div>
+          </div>
+          <div class="media">
+            <label class="col-sm-3 col-form-label">{{ 'suppression' | translate}}:</label>
+            <div class="media-body col-sm-7 switch-lg icon-state">
+              <label class="switch">
+                <input type="checkbox" formControlName="supression"><span class="switch-state"></span>
+              </label>
+            </div>
+          </div>
+          <div class="media">
+            <label class="col-sm-3 col-form-label">{{ 'activation' | translate}}:</label>
+            <div class="media-body col-sm-7 switch-lg icon-state">
+              <label class="switch">
+                <input type="checkbox" formControlName="activation"><span class="switch-state"></span>
+              </label>
+            </div>
+          </div>
+          <div class="media">
+            <label class="col-sm-3 col-form-label">{{ 'reinitialisation' | translate}}:</label>
+            <div class="media-body col-sm-7 switch-lg icon-state">
+              <label class="switch">
+                <input type="checkbox" formControlName="reinitialisation"><span class="switch-state"></span>
+              </label>
+            </div>
+          </div>
+          <div class="media">
+            <label class="col-sm-3 col-form-label">{{ 'moduleActiver' | translate}}:</label>
+            <div class="media-body col-sm-7 switch-lg icon-state">
+              <label class="switch">
+                <input type="checkbox" formControlName="moduleActiver"><span class="switch-state"></span>
+              </label>
+            </div>
+          </div>
+          <div class="media">
+            <label class="col-sm-3 col-form-label">{{ 'synchronisation' | translate}}:</label>
+            <div class="media-body col-sm-7 switch-lg icon-state">
+              <label class="switch">
+                <input type="checkbox" formControlName="synchronisation"><span class="switch-state"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>

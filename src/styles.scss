@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/app.scss";
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+.router-wrapper  {
+    position:  relative;
+    overflow:  hidden;
+    width:  100vw;
+    height:  calc(100%  -  47px);
+    perspective:  1200px;
+    transform-style:  preserve-3d;
+
+}
+
+
+
+:host  {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #60d7a9;
+}
+
+
+.mat-mdc-option.mdc-list-item{
+    background-color: #f9fbf5;
+  }
+  
+  .ng-select.ng-select-single .ng-select-container {
+    height: 45px;
+}
+
+.mat-mdc-form-field-type-mat-input {
+  height: 70px;
+}
+.table {
+    width: 100%; /* make the table take up the full width of its container */
+    table-layout: fixed; /* set a fixed table layout to make columns the same width */
+  }
+  
+  .table thead th,
+  .table tbody td {
+    text-align: center; /* center the text in the header and body cells */
+    vertical-align: middle; /* center the content vertically within the cells */
+    padding: 10px; /* add some padding to the cells */
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9fbf5; /* couleur pour les lignes paires */
+  }
+
+  .ng-placeholder {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  input::placeholder {
+    width: 100%;
+    text-align: center;
+  }
+
+  textarea::placeholder {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .pane.ng-star-inserted {
+    width: 100%;
+
+  }
+
+  .nav-tabset{
+    margin-right: 68%;
+}
+
+
+.mat-mdc-radio-button.mat-accent {
+  --mdc-radio-disabled-selected-icon-color: #000;
+  --mdc-radio-disabled-unselected-icon-color: #000;
+  --mdc-radio-unselected-focus-icon-color: #212121;
+  --mdc-radio-unselected-hover-icon-color: #212121;
+  --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-radio-selected-focus-icon-color: red;
+  --mdc-radio-selected-hover-icon-color: red;
+  --mdc-radio-selected-icon-color: red;
+  --mdc-radio-selected-pressed-icon-color: red;
+  --mat-mdc-radio-ripple-color: #000;
+  --mat-mdc-radio-checked-ripple-color: red;
+}
+
+.mdc-data-table__row:nth-child(even) {
+  background-color: mix(#f1f0ff, white, 90%);
+} 

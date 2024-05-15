@@ -1,0 +1,127 @@
+<app-breadcrumb  [items]="['Domaines' | translate]"
+  [active_item]="'ajouterDomaine' | translate"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="card">
+
+    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="font-weight: bold; font-size: 24px;">
+        {{ 'ajouterDomaine' | translate }}
+      </div>
+      <div>
+        <button ngbTooltip="{{ 'enregistrer' | translate}}" (click)="ajouterDomaine()" class="btn  btn-sm"
+        [disabled]="DomaineForm.invalid"
+        style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: cornflowerblue;  ">
+        <i class="fa fa-save fa-lg" style="color: cornflowerblue;  margin-left: -6px;"></i></button>
+      <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Domaine']" class="btn  btn-sm"
+        style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
+        <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
+   </div>
+    </div>
+
+
+    <form class="form theme-form" [formGroup]="DomaineForm">
+
+      <div class="card-body">
+        <div class="row g-3">
+
+          <div class="col-md-6">
+            <div class="mb-3 row">
+              <div class="col-sm-7">
+                <image-cropper *ngIf="imageChangedEvent" [imageChangedEvent]="imageChangedEvent" style="width: 250px;height: 250px; margin-left: 50%;"
+                  [cropperStaticHeight]="500" [cropperStaticWidth]="500" (imageLoaded)="imageLoaded()"
+                  (cropperReady)="cropperReady($event)" (loadImageFailed)="loadImageFailed()">
+                </image-cropper>
+                <img *ngIf="!imageChangedEvent" [src]="croppedImage" alt="Image"  style="width: 400px;height: 400px; margin-left: 28%;">
+                <input class="btn btn-outline-primary" placeholder="Choose Your Image" type="file" style=" margin-left: 50%;"
+                  (change)="fileChangeEvent($event)" />
+
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'libelle' | translate}}:*</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="libelle" [ngClass]="{'is-invalid':libelle.errors && libelle.touched}" />
+                <div *ngIf="libelle.invalid && (libelle.dirty || libelle.touched)">
+                  <div *ngIf="libelle.errors.domaineTaken" style="color: red;  font-weight: bold;">Domaine déjà pris
+                  </div>
+                  <div *ngIf="libelle.errors.required" style="color: red;  font-weight: bold;">champs obligatoire</div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'code' | translate}}:*</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="code" [ngClass]="{'is-invalid':code.errors && code.touched}" />
+                <div *ngIf="code.invalid && (code.dirty || code.touched)">
+                  <div *ngIf="code.errors.required" style="color: red;  font-weight: bold;">champs obligatoire</div>
+                </div>
+              </div>
+            </div>
+
+      
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'valeurNominale' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="number" placeholder="---"
+                  formControlName="valeurNominale" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'capital' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="number" placeholder="---"
+                  formControlName="capital" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'codePostal' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="codePostal" />
+              </div>
+            </div>
+        
+     
+       
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'representantLegal' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="representantLegal" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'description' | translate}}:</label>
+              <div class="col-sm-7">
+                <textarea class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="description"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+  
+          
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

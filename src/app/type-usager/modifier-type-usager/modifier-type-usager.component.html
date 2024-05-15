@@ -1,0 +1,118 @@
+ <app-breadcrumb [items]="['TypeUsage' | translate]" [active_item]="'libelleTypeUsager' | translate">
+</app-breadcrumb>
+<form class="form theme-form" [formGroup]="TypeUsagerForm">
+    <div class="container-fluid">
+
+        <div class="card" style="width: 100%;height: 75vh;">
+
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="font-weight: bold; font-size: 24px;">
+                    {{ 'libelleTypeUsager' | translate }}
+                </div>
+                <div>
+                    <button ngbTooltip="{{ 'enregistrer' | translate}}" (click)="updateTypeUsager()" class="btn  btn-sm"
+                        [disabled]="TypeUsagerForm.invalid"
+                        style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: cornflowerblue;  ">
+                        <i class="fa fa-save fa-lg" style="color: cornflowerblue;  margin-left: -6px;"></i></button>
+                    <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/TypeUsage']" class="btn  btn-sm"
+                        style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
+                        <i class="fa fa-rotate-left fa-lg"
+                            style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
+                </div>
+            </div>
+
+
+            <div class="card-body">
+                <form [formGroup]="TypeUsagerForm">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                                'libelle' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                                    formControlName="libelle"
+                                    [ngClass]="{'is-invalid':libelle.errors && libelle.touched}" />
+                                <div *ngIf="libelle.invalid && (libelle.dirty || libelle.touched)">
+                                    <div *ngIf="libelle.errors.TypeUsageTaken" style="color: red;  font-weight: bold;">
+                                        Type usager déjà pris
+                                    </div>
+                                    <div *ngIf="libelle.errors.required" style="color: red;  font-weight: bold;">champs
+                                        obligatoire</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'libelleCategorieTypeUsager' | translate}}:*</label>
+                            <div class="col-sm-7">
+                              <ng-select [items]="CategorieTypeUsagesItem" bindLabel="libelle" bindValue="libelle" formControlName="categorieTypeUsage"
+                                placeholder="---" class="js-example-basic-single" (change)="onCategorieTypeUsageChange($event)">
+                              </ng-select>
+              
+                              <div *ngIf="categorieTypeUsage.invalid && (categorieTypeUsage.dirty || categorieTypeUsage.touched)">
+                                <div *ngIf="categorieTypeUsage.errors.required" style="color: red;  font-weight: bold;">champs obligatoire</div>
+                              </div>
+              
+                            </div>
+                          </div>
+                          <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'poidsIdeal' |
+                                translate}}:</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput5" type="number" onkeydown="return event.keyCode !== 69 && event.keyCode !== 109 && event.keyCode !== 107"
+                                [ngClass]="{'is-invalid':poidsIdeal.errors && poidsIdeal.touched}" bindLabel="libelle"
+                                    placeholder="---" formControlName="poidsIdeal" />
+                                    <div *ngIf="poidsIdeal.invalid && (poidsIdeal.dirty || poidsIdeal.touched)"
+                            style="color: red;  font-weight: bold;">
+                            champs obligatoire
+                        </div>
+                        <div *ngIf="TypeUsagerForm.get('poidsIdeal').hasError('min')">
+                            <div style="color: red; font-weight: bold;">La valeur doit être supérieure à zéro</div>
+                          </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'nombreJourCycle' |
+                                translate}}:</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput5" type="number"
+                                [ngClass]="{'is-invalid':nombreJourCycle.errors && nombreJourCycle.touched}" bindLabel="libelle"
+                                    placeholder="---" formControlName="nombreJourCycle" />
+                                    <div *ngIf="nombreJourCycle.invalid && (nombreJourCycle.dirty || nombreJourCycle.touched)"
+                            style="color: red;  font-weight: bold;">
+                            champs obligatoire
+                        </div>
+                        <div *ngIf="TypeUsagerForm.get('nombreJourCycle').hasError('min')">
+                            <div style="color: red; font-weight: bold;">La valeur doit être supérieure à zéro</div>
+                          </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'description' |
+                              translate}}:</label>
+                            <div class="col-sm-7">
+                              <textarea class="form-control " rows="4" formControlName="description" placeholder="---"></textarea>
+                            </div>
+                          </div>
+                        <!-- <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'code' |
+                                translate}}:</label>
+                            <div class="col-sm-7">
+                                <input class="form-control " id="exampleFormControlInput5" type="number"
+                                    placeholder="---" formControlName="code" />
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </form>
+            </div>
+            <div class="card-footer text-end">
+                <div class="col-sm-9 offset-sm-3">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

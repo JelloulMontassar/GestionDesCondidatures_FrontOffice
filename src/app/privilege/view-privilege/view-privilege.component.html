@@ -1,0 +1,116 @@
+<app-breadcrumb [title]="'detailPrivilege' | translate" [items]="['Privileges' | translate]" [active_item]="'detailPrivilege' | translate"></app-breadcrumb>
+<div class="container-fluid">
+<div class="card">
+    <div class="card-header text-end " style="justify-content : text-end ;">
+      <a ngbTooltip="{{ 'modifier' | translate}}" [routerLink]="['/Privilege/editPrivilege', PrivilegeItem?.id]"
+      class="btn  btn-sm"
+      style="background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: orange;  ">
+      <i class="fa fa-pencil fa-lg" style="color: orange; margin-top: 13px; margin-left: -6px;"></i></a>
+    <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Privilege']" class="btn  btn-sm"
+      style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
+      <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
+    </div>
+    <form class="form theme-form"  >
+      <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'libelle' | translate}}:</label>
+                  <div class="col-sm-7">
+                    <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="libelle"  value="{{PrivilegeItem?.libelle}}" disabled="true"/>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'module' | translate}}:</label>
+                  <div class="col-sm-7">
+                    <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="module"  value="{{PrivilegeItem?.module}}" disabled="true" />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'profile' | translate}}:</label>
+                  <div class="col-sm-7">
+                    <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="profile"  value="{{ PrivilegeItem?.profile.libelle }}" disabled="true" />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'nbPrivilege' | translate}}:</label>
+                  <div class="col-sm-7">
+                    <input class="form-control " id="exampleFormControlInput5" type="number" placeholder="nbPrivelege"  value="{{PrivilegeItem?.nbPrivelege}}" disabled="true" />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'classement' | translate}}:</label>
+                  <div class="col-sm-7">
+                    <input class="form-control " id="exampleFormControlInput5" type="number" placeholder="order"  value="{{PrivilegeItem?.order}}" disabled="true" />
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'classementModule' | translate}}:</label>
+                  <div class="col-sm-7">
+                    <input class="form-control " id="exampleFormControlInput5" type="number" placeholder="orderModule"  value="{{PrivilegeItem?.orderModule}}" disabled="true" />
+                  </div>
+                </div>
+             </div>
+             <div class="col-md-6">
+              <div class="media">
+                <label class="col-sm-3 col-form-label">{{ 'creation' | translate}}:</label>
+                <div class="media-body col-sm-7 switch-lg icon-state">
+                  <label class="switch">
+                    <input type="checkbox" checked = "{{PrivilegeItem?.creation == '1' ? 'oui' : ''}}" disabled="true"><span class="switch-state"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="media">
+                <label class="col-sm-3 col-form-label">{{ 'modification' | translate}}:</label>
+                <div class="media-body col-sm-7 switch-lg icon-state">
+                  <label class="switch">
+                    <input type="checkbox" checked = "{{PrivilegeItem?.modification == '1' ? 'oui' : ''}}" disabled="true"><span class="switch-state"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="media">
+                <label class="col-sm-3 col-form-label">{{ 'suppression' | translate}}:</label>
+                <div class="media-body col-sm-7 switch-lg icon-state">
+                  <label class="switch">
+                    <input type="checkbox" checked = "{{PrivilegeItem?.supression == '1' ? 'oui' : ''}}" disabled="true"><span class="switch-state"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="media">
+                <label class="col-sm-3 col-form-label">{{ 'activation' | translate}}:</label>
+                <div class="media-body col-sm-7 switch-lg icon-state">
+                  <label class="switch">
+                    <input type="checkbox" checked = "{{PrivilegeItem?.activation == '1' ? 'oui' : ''}}" disabled="true"><span class="switch-state"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="media">
+                <label class="col-sm-3 col-form-label">{{ 'reinitialisation' | translate}}:</label>
+                <div class="media-body col-sm-7 switch-lg icon-state">
+                  <label class="switch">
+                    <input type="checkbox" checked = "{{PrivilegeItem?.reinitialisation == '1' ? 'oui' : ''}}" disabled="true"><span class="switch-state"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="media">
+                <label class="col-sm-3 col-form-label">{{ 'moduleActiver' | translate}}:</label>
+                <div class="media-body col-sm-7 switch-lg icon-state">
+                  <label class="switch">
+                    <input type="checkbox" checked = "{{PrivilegeItem?.moduleActiver == '1' ? 'oui' : ''}}" disabled="true"><span class="switch-state"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="media">
+                <label class="col-sm-3 col-form-label">{{ 'synchronisation' | translate}}:</label>
+                <div class="media-body col-sm-7 switch-lg icon-state">
+                  <label class="switch">
+                    <input type="checkbox" checked = "{{PrivilegeItem?.synchronisation == '1' ? 'oui' : ''}}" disabled="true"><span class="switch-state"></span>
+                  </label>
+                </div>
+              </div>
+             </div>
+            </div>    
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+
+
+.mdc-data-table__header-row {
+  background-color: #ececec;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.mdc-data-table__row:nth-child(even) {
+  background-color: #f9fbf5;
+} 
+
+.cdk-overlay-container,.cdk-global-overlay-wrapper{
+  background-color: red;
+}
+
+.my-table {
+  table-layout: fixed;
+}
+
+.my-table th:not(:last-child),
+.my-table td:not(:last-child) {
+  width: 17%;
+}

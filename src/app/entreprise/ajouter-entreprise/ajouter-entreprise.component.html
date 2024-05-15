@@ -1,0 +1,250 @@
+<app-breadcrumb [items]="['Entreprises' | translate]" [active_item]="'ajouterEntreprise' | translate"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="card">
+
+
+    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="font-weight: bold; font-size: 24px;">
+        {{ 'ajouterEntreprise' | translate }}
+      </div>
+      <div>
+        <button ngbTooltip="{{ 'enregistrer' | translate}}" (click)="ajouterEntreprise()" class="btn  btn-sm"
+          [disabled]="EntrepriseForm.invalid"
+          style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: cornflowerblue;  ">
+          <i class="fa fa-save fa-lg" style="color: cornflowerblue;  margin-left: -6px;"></i></button>
+        <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Entreprise']" class="btn  btn-sm"
+          style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
+          <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
+      </div>
+    </div>
+
+
+
+
+    <form class="form theme-form" [formGroup]="EntrepriseForm">
+
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="mb-3 row">
+              <div class="col-sm-7">
+
+                <image-cropper *ngIf="imageChangedEvent" [imageChangedEvent]="imageChangedEvent"
+                  style="width: 250px;height: 250px; margin-left: 50%;" [cropperStaticHeight]="500"
+                  [cropperStaticWidth]="500" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady($event)"
+                  (loadImageFailed)="loadImageFailed()">
+                </image-cropper>
+
+                <img *ngIf="!imageChangedEvent" [src]="croppedImage" alt="Image"
+                  style="width: 250px;height: 250px; margin-left: 50%;">
+                <input class="btn btn-outline-primary" placeholder="Choose Your Image" type="file"
+                  style="margin-left: 50%;" (change)="fileChangeEvent($event)" />
+
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'codePostal' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="codePostal" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'siteWeb' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="siteWeb" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'email' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="email" />
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'libelle' | translate}}:*</label>
+              <div class="col-sm-7">
+                <input class="form-control " formControlName="libelle" id="libelle" type="text" placeholder="---"
+                  [ngClass]="{'is-invalid': libelle.invalid && (libelle.dirty || libelle.touched)}" />
+                <div *ngIf="libelle.invalid && (libelle.dirty || libelle.touched)">
+                  <div *ngIf="libelle.errors.entrepriseTaken" style="color: red;  font-weight: bold;">Centre déjà pris
+                  </div>
+                  <div *ngIf="libelle.errors.required" style="color: red;  font-weight: bold;">champs obligatoire</div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'matriculeFiscale' | translate}}:*</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="matriculeFiscale"
+                  [ngClass]="{'is-invalid':matriculeFiscale.errors && matriculeFiscale.touched}" />
+                <div *ngIf="matriculeFiscale.invalid && (matriculeFiscale.dirty || matriculeFiscale.touched)">
+                  <div *ngIf="matriculeFiscale.errors.required" style="color: red;  font-weight: bold;">champs
+                    obligatoire
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'representantLegal' | translate}}:*</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="representantLegal"
+                  [ngClass]="{'is-invalid':representantLegal.errors && representantLegal.touched}" />
+                <div *ngIf="representantLegal.invalid && (representantLegal.dirty || representantLegal.touched)">
+                  <div *ngIf="representantLegal.errors.required" style="color: red;  font-weight: bold;">champs
+                    obligatoire
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput50">{{
+                'telephone' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput50" type="text" placeholder="---"
+                  formControlName="telephone" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'fax' | translate}}:</label>
+              <div class="col-sm-7">
+                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="fax" />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'adresse' | translate}}:</label>
+              <div class="col-sm-7">
+                <textarea class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="adresse"></textarea>
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+                'description' | translate}}:</label>
+              <div class="col-sm-7">
+                <textarea class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
+                  formControlName="description"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="card">
+    <div class="card-header">
+      <h5>{{'Modules' | translate}}</h5>
+    </div>
+    <div class="card-body">
+      <div class="row " *ngFor="let item of ModulesItem; let i = index" style="margin-bottom: 20px;">
+
+        <div class="col mb-3">
+          <div class="media">
+            <label class="col-sm-2 col-form-label">{{ item.libelle | translate}}</label>
+            <div class="media-body col-sm-7 switch-lg icon-state">
+              <label class="switch">
+                <input type="checkbox" [checked]="item.active" (change)="onChange(i)"><span class="switch-state"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="media row" *ngIf="item.active" style="background-color: #f9fbf5; margin-left: 1px;">
+          <ng-container *ngIf="item.libelle != 'TempsRéel'  && item.libelle != 'Historique'  ">
+            <div class="row" style="margin-left: 10%; margin-top: 1%;"
+              *ngFor="let subItem of item.listDetailModuleInstalleParEntreprise ; let j = index">
+              <label class="col-sm-2 col-form-label">{{ subItem.libelle | translate}}:</label>
+              <div class="media-body  col-sm-7 switch-lg icon-state">
+                <label class="switch">
+                  <input type="checkbox" (change)="onChangeSubItem(i,j)"><span class="switch-state"></span>
+                </label>
+              </div>
+
+
+              <div class="media row"  *ngIf="subItem.libelle =='Batiment'   && subItem.active" style="background-color: #f9fbf5; margin-left: 1px;">
+                <ng-container *ngIf="subItem.libelle =='Batiment'   && subItem.active">
+                <div  class="row"  style="margin-left: 10%; margin-top: 1%;"  >
+                  <label class="col-sm-2 col-form-label">{{ 'ParamBatiment' | translate}}:</label>
+                  <div class="media-body  col-sm-7 switch-lg icon-state">
+                    <label class="switch">
+                      <input type="checkbox"  [checked]="paramBatiment"    (change)="onChangeDetailBatiment()" ><span
+                        class="switch-state"></span>
+                    </label>
+                  </div>
+            </div>
+          </ng-container>
+          </div>
+
+
+
+              <!--     <div class="row" style="margin-left: -10%; margin-top: 1%;" *ngIf="subItem.active">
+              <label class="col-sm-2 col-form-label">{{'Lecture' | translate}}:</label>
+              <div class="media-body  col-sm-4 switch-lg icon-state">
+                <label class="switch">
+                  <input type="checkbox" [checked]="subItem.lecture" (change)="onChangeSubItemLecture(i,j)"><span
+                    class="switch-state"></span>
+                </label>
+              </div>
+              <label class="col-sm-2 col-form-label">{{'Creation' | translate}}:</label>
+              <div class="media-body  col-sm-4 switch-lg icon-state">
+                <label class="switch">
+                  <input type="checkbox" [checked]="subItem.creation" (change)="onChangeSubItemCreation(i,j)"><span
+                    class="switch-state"></span>
+                </label>
+              </div>
+              <label class="col-sm-2 col-form-label">{{'Modification' | translate}}:</label>
+              <div class="media-body  col-sm-4 switch-lg icon-state">
+                <label class="switch">
+                  <input type="checkbox" [checked]="subItem.modification"
+                    (change)="onChangeSubItemModification(i,j)"><span class="switch-state"></span>
+                </label>
+              </div>
+
+              <label class="col-sm-2 col-form-label">{{'Supression' | translate}}:</label>
+              <div class="media-body  col-sm-4 switch-lg icon-state">
+                <label class="switch">
+                  <input type="checkbox" [checked]="subItem.supression" (change)="onChangeSubItemSupression(i,j)"><span
+                    class="switch-state"></span>
+                </label>
+              </div>
+              <hr>
+            </div> -->
+
+
+            </div>
+
+          </ng-container>
+
+
+        </div>
+
+
+        <hr>
+      </div>
+    </div>
+  </div>

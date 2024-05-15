@@ -1,0 +1,71 @@
+<app-breadcrumb [title]="'Ajouter Module'" [items]="['other']" [active_item]="'Ajouter Module'"></app-breadcrumb>
+
+<div class="card">
+    <form class="form theme-form"  [formGroup]="ModuleForm">
+    <div class="card-header text-end">
+      <h5></h5>
+     
+      <a (click)="ajouterModule()" class="btn  btn-sm" style=" margin-left: 20px; background-color: #f7f7f7; height: 60px; border: solid; border-width: 2px;  border-color: cornflowerblue;  "> <i class="fa fa-save fa-lg" style="color: cornflowerblue; margin-top: 18px;" ></i></a>
+      <a [routerLink]="['/Module']" class="btn  btn-sm" style=" margin-left: 20px; background-color: #f7f7f7; height: 60px; border: solid; border-width: 2px;  border-color: #7c8184;  "> <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 18px;" ></i></a>
+  
+
+    </div>
+   
+      <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="mb-2"> 
+                    <label for="exampleFormControlInput5">libelle</label>
+                    <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="libelle"  formControlName="libelle" [ngClass]="{'is-invalid':libelle.errors && libelle.touched}"/>
+                </div>
+                <div *ngIf="libelle.invalid && (libelle.dirty || libelle.touched)" >
+                    <div *ngIf="libelle.errors.centreTaken" style="color: red;  font-weight: bold;">Equipement déjà pris</div>
+                    <div *ngIf="libelle.errors.required" style="color: red;  font-weight: bold;">champs obligatoire</div>
+                  </div>
+                  <div class="mb-2"> 
+                    <label for="exampleFormControlInput5">code</label>
+                    <input class="form-control " id="exampleFormControlInput5" type="number" placeholder="code"  formControlName="code" />
+                </div>
+                
+             
+             </div>
+              
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="mb-2">
+                    <label for="exampleFormControlSelect7">Entreprise</label>
+                    <select class="form-control  digits" id="exampleFormControlSelect7" formControlName="entreprise"
+                      placeholder="select modele">
+                      <option *ngFor="let item of EntrepriseItem" [value]="item.libelle">{{ item.libelle }}</option>
+                    </select>
+                  </div>
+                  <div class="mb-2"> 
+                    <div class="m-t-15 m-checkbox-inline custom-radio-ml mb-3">
+                        <label class="col-sm-4 col-form-label" style="margin-right: 0px;">active:</label>
+                        <div class="form-check form-check-inline radio radio-primary ">
+                          <input class="form-check-input" id="radioinline5" type="radio" name="radio3" value=true formControlName="active" />
+                          <label class="form-check-label mb-0" for="radioinline5">oui<span class="digits"> </span></label>
+                        </div>
+                        <div class="form-check form-check-inline radio radio-primary">
+                          <input class="form-check-input" id="radioinline6" type="radio" name="radio3" value=false formControlName="active"/>
+                          <label class="form-check-label mb-0" for="radioinline6">non<span class="digits"> </span></label>
+                        </div>
+                      </div>
+                </div>
+                    
+                </div>
+                <div class="col-md-6">
+                  
+            
+                    
+                </div>
+              </div>
+
+
+              
+      </div>
+    </form>
+  </div>
+
