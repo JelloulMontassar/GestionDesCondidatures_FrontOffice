@@ -1,0 +1,22 @@
+
+
+.mdc-data-table__header-row {
+    background-color: #ececec;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+  
+  
+  .my-table {
+    table-layout: fixed;
+  }
+  
+  .my-table th:not(:last-child),
+  .my-table td:not(:last-child) {
+    width: 25%;
+  }
+  
+  .my-table td:first-child,
+  .my-table th:first-child {
+    width: 2%;
+  }

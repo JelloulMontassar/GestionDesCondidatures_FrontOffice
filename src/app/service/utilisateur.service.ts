@@ -130,6 +130,25 @@ export class UtilisateurService {
   }
 
 
+  verifierOffre(id: any): Observable<any> {
+    // construire les paramètres de requête
+    const params = new HttpParams()
+      .set('idOffre', id.toString());
+
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.storageService.getUser().token
+      }),
+      params: params
+    };
+
+    // effectuer la requête HTTP GET avec les paramètres de requête inclus
+    return this.http.get<any>(environment.apiURL + 'utilisateur/verifierOffre', httpOptions);
+  }
+
+
   rechercheUtilisateurs(profileId: any, posteId: any, email: any, statut: any): Observable<any> {
     const params = {
       profileId: profileId ? profileId.toString() : null,

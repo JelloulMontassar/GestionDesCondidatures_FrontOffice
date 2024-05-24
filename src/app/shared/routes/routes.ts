@@ -190,5 +190,39 @@ export const content: Routes = [
     path: "CategorieUsage",
     loadChildren: () => import("../../detail-type-usager/detail-type-usager.module").then((m) => m.DetailTypeUsagerModule),
   },
+  {
+    path: "Candidat",
+    loadChildren: () => import("../../candidat/candidat.module").then((m) => m.CandidatModule),
+  },
+  {
+    path: "Candidature",
+    loadChildren: () => import("../../candidature/candidature.module").then((m) => m.CandidatureModule),
+  },
+  {
+    path: "Calendrier",
+    loadChildren: () => import("../../calendrier/calendrier.module").then((m) => m.CalendrierModule),
+  },
+  {
+    path: "Offre",
+    loadChildren: () => import("../../offre/offre.module").then((m) => m.OffreModule),
+  },
+  {
+    path: "Entretien",
+    loadChildren: () => import("../../entretien/entretien.module").then((m) => m.EntretienModule),
+  },
+  {
+    path: "Evenement",
+    loadChildren: () => import("../../evenement/evenement.module").then((m) => m.EvenementModule),
+  },
+  {
+    path: "Recrutement",
+    loadChildren: () => import("../../recrutement/recrutement.module").then((m) => m.RecrutementModule),
+  },
+  {
+    path: "StatusCandidature",
+    loadChildren: () => import("../../Status-Candidature/Status-Candidature.module").then((m) => m.StatusCandidatureModule),
+  },
+  
+
   
 ];

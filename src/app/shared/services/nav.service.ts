@@ -105,7 +105,7 @@ export class NavService implements OnDestroy {
         this.MENUITEMS = this.MENUITEMS || [];
         this.ModuleInstaller.forEach(element => {
 
-          if (element.libelle === 'TempsRéel' || element.libelle === 'Historique') {
+          if (element.libelle !== 'Parametrages' ) {
 
             element.listDetailModuleInstalleParEntreprise.forEach(elementDetail => {
               if (elementDetail.active) {
@@ -175,7 +175,7 @@ export class NavService implements OnDestroy {
           this.PrivilegeItem = dataProfile.listPrivileges.filter(module => module.active === true);
           this.MENUITEMS = this.MENUITEMS || [];
           this.ModuleInstaller.forEach(element => {
-            if (element.libelle === 'TempsRéel' || element.libelle === 'Historique') {
+            if (element.libelle !== 'Parametrages') {
               element.listDetailModuleInstalleParEntreprise.forEach(elementDetail => {
                 if (elementDetail.active) {
                   const privilege = this.PrivilegeItem.find(item => item.libelle === elementDetail.libelle);
@@ -257,10 +257,11 @@ export class NavService implements OnDestroy {
   }
 
   MENUITEMS: Menu[] = [
-    /*  {
-       headTitle1: "General",
-     }, */
-    /*  {
+    
+
+
+        /*  {
+          { path: "/Candidat/", title: "Candidat",   icon: "user", type: "link", bookmark: true },
        title: "Dashboards",
        icon: "home",
        type: "sub",
@@ -792,3 +793,9 @@ export class NavService implements OnDestroy {
   // Array
   items = new BehaviorSubject<Menu[]>(this.MENUITEMS);
 }
+
+
+
+
+
+

@@ -1,0 +1,168 @@
+<app-breadcrumb  [active_item]="'Candidat' | translate"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-weight: bold; font-size: 24px;">
+            {{ 'Candidat' | translate }}
+          </div>
+          <div>
+            <a *ngIf="privilege.creation" ngbTooltip="{{ 'ajouter' | translate }}" class="btn btn-sm"
+              style="background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px; border-color: green; margin-right: 10px;"
+              (click)="addCandidat()">
+              <i class="fa fa-plus fa-lg" style="color: green; margin-top: 13px; margin-left: -6px;"></i>
+            </a>
+            <a *ngIf="(privilege.supression  && selectedItem != 0 )"
+              [ngbTooltip]="'supprimer' | translate" class="btn btn-sm"
+              (click)="openDelete(contentDelete, selectedItem?.id)"
+              style="background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px; border-color: red;">
+              <i class="fa fa-trash" style="color: red; margin-top: 13px; margin-left: -6px;"></i>
+            </a>
+            <!-- <a ngbTooltip="{{ 'recherche' | translate}}" class="btn  btn-sm" (click)="openRecherche(contentRecherche)"
+              style=" margin-left: 10px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #da70d6;  ">
+              <i class="fa fa-lg fa-search" style="color: #da70d6; margin-top: 13px; margin-left: -6px;"></i>
+            </a> -->
+          </div>
+        </div>
+
+
+        <div class="card-body custom-datatable noscroll">
+          <div class="custom-datatable table-responsive">
+
+
+
+            <div class="mat-elevation-z8">
+              <div class="text-end">
+                <mat-form-field>
+                  <mat-label>{{ 'recherche' | translate}}</mat-label>
+                  <input matInput placeholder="{{ 'recherche' | translate}}" (keyup)="Filterchange($event)">
+                </mat-form-field>
+              </div>
+              <table mat-table matSort [dataSource]="dataSource" class="my-table">
+                <ng-container matColumnDef="select">
+                  <th mat-header-cell *matHeaderCellDef style="width: 10px;"></th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-radio-button [value]="element" (change)="onRadioChange(element)"></mat-radio-button>
+                  </td>
+                </ng-container>
+        
+                <ng-container matColumnDef="nom">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> {{ 'Nom' | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element?.nom}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="prenom">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef> {{ 'Prénom' | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.prenom}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="dateNaissance">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef> {{ 'dateNaissance' | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element?.dateNaissance | date:'dd/MM/yyyy'}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="cin">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef> {{ 'CIN' | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element?.cin | date:'dd/MM/yyyy'}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="gsm">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef> {{ 'Gsm' | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element?.gsm | date:'dd/MM/yyyy'}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="dateCreation">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef> {{ 'dateCreation' | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element?.dateCreation | date:'dd/MM/yyyy'}} </td>
+                  </ng-container>
+                  
+                <ng-container matColumnDef="action">
+                  <th mat-header-cell *matHeaderCellDef> </th>
+                  <td mat-cell *matCellDef="let element" class="text-end">
+                    <a ngbTooltip="{{ 'Detail' | translate}}" class="btn btn-light btn-sm"
+                      style="width: 10px; height: 40px;" [routerLink]="['/Candidat/viewCandidat', element.id]"><i
+                        class="fa fa-search-plus" style="margin-top: 7px;margin-left: -7px;"></i> </a>
+                   
+                  </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons>
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #contentDelete let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">{{ 'confirmerSuppresion' | translate}}</h4>
+  </div>
+  <div class="modal-body">
+    <p>{{ 'msgSuppresion' | translate}}</p>
+    <p *ngIf="verifierList" style="color: red;">{{ 'msgSuppresionCandidat' | translate}} </p>
+  </div>
+  <div class="modal-footer">
+    <button *ngIf="!verifierList" type="button" class="btn btn-outline-success" (click)="onSelect()"><i
+        class="fa fa-check"></i></button>
+    <button type="button" class="btn btn-outline-danger" (click)="modal.dismiss('Cross click')"><i
+        class="fa fa-times"></i></button>
+  </div>
+</ng-template>
+  
+  
+  
+  
+  <ng-template #contentRecherche let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">{{ 'recherche' | translate}}</h4>
+    </div>
+    <form class="form theme-form" [formGroup]="dateForm">
+      <div class="modal-body">
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'domaine' | translate}}:</label>
+          <div class="col-sm-7">
+            <ng-select [items]="DomaineItem" bindLabel="libelle" bindValue="id" formControlName="domaineId"
+              placeholder="---" class="js-example-basic-single">
+            </ng-select>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+            'gouvernorat' | translate}}:</label>
+          <div class="col-sm-7">
+            <ng-select [items]="GouvernoratItem"
+              
+              (change)="onGouvernoratChange($event)" bindLabel="libelle" bindValue="libelle"
+              formControlName="libelleGouvernorat" placeholder="---" class="js-example-basic-single">
+            </ng-select>
+            
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{
+            'delegation' | translate}}:</label>
+          <div class="col-sm-7">
+            <ng-select [items]="DelegationItem"
+             
+              (change)="onDelegationChange($event)" bindLabel="libelle" bindValue="libelle"
+              formControlName="libelleDelegation" placeholder="---" class="js-example-basic-single">
+            </ng-select>
+      
+          </div>
+        </div>
+      </div>
+    </form>
+  
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-success" (click)="recherche()"><i class="fa fa-check"></i></button>
+      <button type="button" class="btn btn-outline-danger" (click)="modal.dismiss('Cross click')"><i
+          class="fa fa-times"></i></button>
+    </div>
+  </ng-template>
+
