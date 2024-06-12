@@ -51,7 +51,7 @@ export class AjouterDepartementComponent {
         this.DepartementForm.controls['libelle'].setErrors({ 'serviceTaken': true });
       } else {
     this.DepartementService.saveDepartement(this.DepartementForm.value).subscribe((data: any[]) => {
-      this.router.navigate(["/Departement"]);
+      this.router.navigate(["/admin/Departement"]);
     });
       }
     }); 

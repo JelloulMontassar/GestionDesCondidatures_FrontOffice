@@ -1,8 +1,8 @@
-import { Routes } from "@angular/router";
+import { Routes } from '@angular/router';
 
 export const content: Routes = [
   {
-    path: "dashboard",
+    path: 'dashboard',
     loadChildren: () => import("../../utilisateur/utilisateur.module").then((m) => m.UtilisateurModule),
   },
   {
@@ -26,7 +26,7 @@ export const content: Routes = [
     loadChildren: () => import("../../components/apps/project/project.module").then((m) => m.ProjectModule),
   },
   {
-    path: "ecommerce",
+    path: 'ecommerce',
     loadChildren: () => import("../../components/apps/e-commerce/e-commerce.module").then((m) => m.ECommerceModule),
   },
   {
@@ -200,7 +200,7 @@ export const content: Routes = [
   },
   {
     path: "Calendrier",
-    loadChildren: () => import("../../calendrier/calendrier.module").then((m) => m.CalendrierModule),
+    loadChildren: () => import("../../calendrier/calender.module").then((m) => m.CalenderModule),
   },
   {
     path: "Offre",

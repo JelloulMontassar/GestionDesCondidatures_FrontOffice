@@ -84,7 +84,7 @@ export class ProfileComponent {
   }
 
   addProfile() {
-    this.router.navigate(["/Profile/addProfile"]);
+    this.router.navigate(["/admin/Profile/addProfile"]);
   }
   openDelete(targetModal, id: any) {
     this.deleteId = id;

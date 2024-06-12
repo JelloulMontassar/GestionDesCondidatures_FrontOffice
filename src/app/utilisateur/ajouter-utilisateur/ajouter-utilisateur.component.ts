@@ -130,7 +130,7 @@ export class AjouterUtilisateurComponent {
             this.utilisateurService.saveUtilisateur(this.UtilisateurForm.value).subscribe((data: any[]) => {
             });
           }
-          this.router.navigate(["/Utilisateur"]);
+          this.router.navigate(["/admin/Utilisateur"]);
 
         }
       });

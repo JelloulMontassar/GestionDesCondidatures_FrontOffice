@@ -127,7 +127,7 @@ export class UtilisateurComponent {
 
   
   addUtilisateur() {
-    this.router.navigate(["/Utilisateur/addUtilisateur"]);
+    this.router.navigate(["/admin/Utilisateur/addUtilisateur"]);
   }
   openDelete(targetModal, id: any) {
     this.deleteId  = id;

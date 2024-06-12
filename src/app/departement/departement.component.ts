@@ -76,7 +76,7 @@ export class DepartementComponent {
   }
 
   addDepartement() {
-    this.router.navigate(["/Departement/addDepartement"]);
+    this.router.navigate(["/admin/Departement/addDepartement"]);
   }
 
   openDelete(targetModal, id: any) {

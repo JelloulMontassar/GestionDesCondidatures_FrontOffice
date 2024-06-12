@@ -61,7 +61,7 @@ export class AjouterPosteComponent {
         this.PosteForm.controls['libelle'].setErrors({ 'posteTaken': true });
       } else {
         this.PosteService.savePoste(this.PosteForm.value).subscribe((data: any[]) => {
-          this.router.navigate(["/Poste"]);
+          this.router.navigate(["/admin/Poste"]);
          }); 
       }
     }); 

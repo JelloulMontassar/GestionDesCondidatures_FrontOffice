@@ -58,13 +58,13 @@
                   <th mat-header-cell *matHeaderCellDef> </th>
                   <td mat-cell *matCellDef="let element" class="text-end">
                     <a *ngIf="(privilege.modification && element.libelle != 'Super Admin') || (privilege.modification && SuperAdminSuivrePrivilege)"
-                      [ngbTooltip]="'modifierProfile' | translate" [routerLink]="['/Profile/editProfile', element.id]"
+                      [ngbTooltip]="'modifierProfile' | translate" [routerLink]="['/admin/Profile/editProfile', element.id]"
                       class="btn btn-sm"
                       style="background-color: #f7f7f7; width: 10px; height: 40px; margin-left: 15px; border: solid; border-width: 2px; border-color: orange;">
                       <i class="fa fa-pencil fa-lg" style="color: orange; margin-top: 7px; margin-left: -7px;"></i>
                     </a>
                     <a *ngIf="!((privilege.modification && element.libelle != 'Super Admin') || (privilege.modification && SuperAdminSuivrePrivilege))"
-                      [ngbTooltip]="'modifierProfile' | translate" [routerLink]="['/Profile/editProfile', element.id]"
+                      [ngbTooltip]="'modifierProfile' | translate" [routerLink]="['/admin/Profile/editProfile', element.id]"
                       class="btn btn-sm disabled"
                       style="background-color: #f7f7f7; width: 10px; height: 40px; margin-left: 15px; border: solid; border-width: 2px; border-color: gray; cursor: not-allowed;">
                       <i class="fa fa-pencil fa-lg" style="color: gray; margin-top: 7px; margin-left: -7px;"></i>

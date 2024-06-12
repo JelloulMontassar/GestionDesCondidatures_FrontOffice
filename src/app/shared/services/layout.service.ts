@@ -18,12 +18,12 @@ export class LayoutService {
   };
 
   constructor() {
-    if (this.config.settings.layout_type == "rtl") document.getElementsByTagName("html")[0].setAttribute("dir", this.config.settings.layout_type);
+    if (this.config.settings.layout_type == "rtl") { document.getElementsByTagName("html")[0].setAttribute("dir", this.config.settings.layout_type); }
 
     document.documentElement.style.setProperty("--theme-deafult", localStorage.getItem("primary_color"));
     document.documentElement.style.setProperty("--theme-secondary", localStorage.getItem("secondary_color"));
-    var primary = localStorage.getItem("primary_color") || this.config.color.secondary_color;
-    var secondary = localStorage.getItem("secondary_color") || this.config.color.secondary_color;
+    let primary = localStorage.getItem("primary_color") || this.config.color.secondary_color;
+    let secondary = localStorage.getItem("secondary_color") || this.config.color.secondary_color;
     this.config.color.primary_color = primary;
     this.config.color.secondary_color = secondary;
     localStorage.getItem("primary_color") || this.config.color.primary_color;
@@ -41,8 +41,8 @@ export class LayoutService {
   resetColor() {
     document.documentElement.style.setProperty("--theme-deafult", "#7366ff");
     document.documentElement.style.setProperty("--theme-secondary", "#f73164");
-    (<HTMLInputElement>document.getElementById("ColorPicker1")).value = "#7366ff";
-    (<HTMLInputElement>document.getElementById("ColorPicker2")).value = "#f73164";
+    (document.getElementById("ColorPicker1") as HTMLInputElement).value = "#7366ff";
+    (document.getElementById("ColorPicker2") as HTMLInputElement).value = "#f73164";
     localStorage.setItem("primary_color", "#7366ff");
     localStorage.setItem("secondary_color", " #f73164");
     window.location.reload();

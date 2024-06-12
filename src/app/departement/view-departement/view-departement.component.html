@@ -9,7 +9,7 @@
       </div>
       <div>
         <a *ngIf="(privilege.modification )" ngbTooltip="{{ 'modifier' | translate}}"
-        [routerLink]="['/Departement/editDepartement', DepartementItem?.id]" class="btn  btn-sm"
+        [routerLink]="['/admin/Departement/editDepartement', DepartementItem?.id]" class="btn  btn-sm"
         style="background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: orange;  ">
         <i class="fa fa-pencil fa-lg" style="color: orange; margin-top: 13px; margin-left: -6px;"></i></a>
       <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Departement']" class="btn  btn-sm"

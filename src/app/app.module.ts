@@ -28,10 +28,25 @@ import { MaterialModule } from '../material-module';
 import { PasswordRestComponent } from './password-rest/password-rest.component';
 import { MatIconModule } from '@angular/material/icon';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
-
-
-
+import { HomeComponent } from './home/home.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatListModule} from "@angular/material/list";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {MatCardModule} from "@angular/material/card";
+import { JobDetailsComponent } from './jobdetails/jobdetails.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SignupComponent } from './signup/signup.component';
+import { SignupStepTwoComponent } from './signup-step-two/signup-step-two.component';
+import { ProfileCandidatComponent } from './profile-candidat/profile-candidat.component';
+import { CandidateDetailsDialogComponent } from './candidate-details-dialog/candidate-details-dialog.component';
+import { DatePickerDialogComponent } from './date-picker-dialog/date-picker-dialog.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -43,7 +58,16 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     LoginComponent,
-    PasswordRestComponent
+    PasswordRestComponent,
+    HomeComponent,
+    JobDetailsComponent,
+    HeaderComponent,
+    FooterComponent,
+    SignupComponent,
+    SignupStepTwoComponent,
+    ProfileCandidatComponent,
+    CandidateDetailsDialogComponent,
+    DatePickerDialogComponent
 
   ],
   imports: [
@@ -58,6 +82,17 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     NgbModule,
     MatIconModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatDialogModule,
     ToastrModule.forRoot(),
     TranslateModule.forRoot({
       loader: {

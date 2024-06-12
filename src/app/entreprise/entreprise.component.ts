@@ -77,7 +77,7 @@ export class EntrepriseComponent {
   }
 
   addEntreprise() {
-    this.router.navigate(["/Entreprise/addEntreprise"]);
+    this.router.navigate(["/admin/Entreprise/addEntreprise"]);
   }
 
 

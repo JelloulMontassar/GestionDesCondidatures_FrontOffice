@@ -42,7 +42,7 @@ export class OffreComponent {
     this.loadData();
   }
 
-  displayedColumns: string[] = ['select','libelle', 'departement.libelle', 'dateExpiration', 'description', 'action'];
+  displayedColumns: string[] = ['select', 'Libelle', 'Date Expiration',  'Localisation', 'Salaire','Type Contrat',  'Action'];
   dataSource: any;
 
 
@@ -89,7 +89,7 @@ export class OffreComponent {
   }
 
   addOffre() {
-    this.router.navigate(["/Offre/addOffre"]);
+    this.router.navigate(["/admin/Offre/addOffre"]);
   }
 
 

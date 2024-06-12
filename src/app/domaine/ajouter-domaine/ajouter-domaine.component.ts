@@ -97,7 +97,7 @@ export class AjouterDomaineComponent {
         } else {
   
           this.DomaineService.saveDomaine(this.DomaineForm.value).subscribe((data: any[]) => {
-            this.router.navigate(["/Domaine"]);
+            this.router.navigate(["/admin/Domaine"]);
           });
         }
       }); 

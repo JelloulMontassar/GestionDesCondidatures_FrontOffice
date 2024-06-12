@@ -91,7 +91,7 @@ export class DomaineComponent {
   }
 
   addDomaine() {
-    this.router.navigate(["/Domaine/addDomaine"]);
+    this.router.navigate(["/admin/Domaine/addDomaine"]);
   }
 
   openDelete(targetModal, id: any) {

@@ -86,7 +86,7 @@ export class PosteComponent {
   }
 
   addPoste() {
-    this.router.navigate(["/Poste/addPoste"]);
+    this.router.navigate(["/admin/Poste/addPoste"]);
   }
 
 

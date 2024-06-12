@@ -88,7 +88,7 @@ displayedColumns: string[] = ['select','nom', 'prenom','dateNaissance','gsm','ci
   }
 
   addCandidat() {
-    this.router.navigate(["/Candidat/addCandidat"]);
+    this.router.navigate(["/admin/Candidat/addCandidat"]);
   }
 
   onRadioChange(element: any) {

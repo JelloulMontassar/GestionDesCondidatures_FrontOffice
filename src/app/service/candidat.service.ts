@@ -33,8 +33,7 @@ export class CandidatService {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + this.StorageService.getUser().token
-      }),
-      params: params
+      })
     };
 
 

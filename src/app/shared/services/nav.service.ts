@@ -113,7 +113,7 @@ export class NavService implements OnDestroy {
                 if (privilege !== undefined) {
                   if (privilege.lecture && privilege.active) {
                     const nouvelObjet = {
-                      path: "/" + privilege.libelle,
+                      path: "/admin/" + privilege.libelle,
                       title: element.libelle,
                       icon: element.icon,
                       bookmark: true,
@@ -133,7 +133,7 @@ export class NavService implements OnDestroy {
                 if (privilege !== undefined) {
                   if (privilege.lecture) {
                     const nouvelObjet1 = {
-                      path: "/" + privilege.libelle,
+                      path: "/admin/" + privilege.libelle,
                       title: privilege.libelle,
                       type: "link",
                     }
@@ -182,7 +182,7 @@ export class NavService implements OnDestroy {
                   if (privilege !== undefined) {
                     if (privilege.lecture) {
                       const nouvelObjet = {
-                        path: "/" + privilege.libelle,
+                        path: "/admin/" + privilege.libelle,
                         title: element.libelle,
                         icon: element.icon,
                         bookmark: true,
@@ -201,7 +201,7 @@ export class NavService implements OnDestroy {
                   if (privilege !== undefined) {
                     if (privilege.lecture) {
                       const nouvelObjet1 = {
-                        path: "/" + privilege.libelle,
+                        path: "/admin/" + privilege.libelle,
                         title: privilege.libelle,
                         type: "link",
                       }

@@ -127,7 +127,7 @@ export class ModifierDomaineComponent {
         this.DomaineForm.controls['libelle'].setErrors({ 'libelleExist': true });
       }else {
         this.domaineService.modifierDomaine(this.DomaineForm.value).subscribe((data: any[]) => {
-          this.router.navigate(["/Domaine"]);
+          this.router.navigate(["/admin/Domaine"]);
         });  
       }
     });

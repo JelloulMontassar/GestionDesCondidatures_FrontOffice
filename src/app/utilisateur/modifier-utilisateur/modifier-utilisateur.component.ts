@@ -195,7 +195,7 @@ export class ModifierUtilisateurComponent {
           this.updateSessionAndNavigation();
         });
       } else {
-        this.router.navigate(['/Utilisateur']);
+        this.router.navigate(['/admin/Utilisateur']);
       }
     });
   }
@@ -206,7 +206,7 @@ export class ModifierUtilisateurComponent {
     window.sessionStorage.setItem('utilisateur', encodedValue);
     this.userService.user = this.UtilisateurForm.value;
     this.sessionService.updateSession(this.UtilisateurForm.value);
-    this.router.navigate(['/Utilisateur']);
+    this.router.navigate(['/admin/Utilisateur']);
   }
 
 

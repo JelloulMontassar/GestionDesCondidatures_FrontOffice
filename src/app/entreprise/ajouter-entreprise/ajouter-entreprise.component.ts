@@ -217,7 +217,7 @@ if ((this.ModulesItem[index].libelle === 'TempsRéel' && !this.ModulesItem[index
               this.moduleInstalleParEntrepriseService.saveAllDetailModule(detail).subscribe((dataDetail: any[]) => { });
             });
           });
-          this.router.navigate(["/Entreprise"]);
+          this.router.navigate(["/admin/Entreprise"]);
         }); 
       }
     });

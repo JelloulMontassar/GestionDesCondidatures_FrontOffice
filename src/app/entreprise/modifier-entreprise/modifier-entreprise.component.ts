@@ -178,11 +178,11 @@ export class ModifierEntrepriseComponent {
                             const encodedValue = window.btoa(JSON.stringify(user));
                             window.sessionStorage.setItem('utilisateur', encodedValue);
                             this.sessionService.updateSession(data);
-                            this.router.navigate(["/Entreprise"]);
+                            this.router.navigate(["/admin/Entreprise"]);
                           });
                         });
                       } else {
-                        this.router.navigate(["/Entreprise"])
+                        this.router.navigate(["/admin/Entreprise"])
                       }
                     });
                     this.PrivilegeItemTemp = [];

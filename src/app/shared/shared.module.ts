@@ -72,6 +72,6 @@ import { SwiperComponent } from './components/header/elements/swiper/swiper.comp
   ],
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, NgbModule, DragulaModule.forRoot(), TranslateModule.forRoot(), CarouselModule, SwiperModule],
   providers: [NavService, ChatService, LayoutService, TableService, DecimalPipe],
-  exports: [NgbModule, FormsModule, ReactiveFormsModule, TranslateModule, LoaderComponent, BreadcrumbComponent, FeatherIconsComponent, TapToTopComponent, DisableKeyPressDirective, OnlyAlphabetsDirective, OnlyNumbersDirective, NgbdSortableHeader, SvgIconComponent, SwiperModule],
+    exports: [NgbModule, FormsModule, ReactiveFormsModule, TranslateModule, LoaderComponent, BreadcrumbComponent, FeatherIconsComponent, TapToTopComponent, DisableKeyPressDirective, OnlyAlphabetsDirective, OnlyNumbersDirective, NgbdSortableHeader, SvgIconComponent, SwiperModule, HeaderComponent, FooterComponent],
 })
 export class SharedModule {}

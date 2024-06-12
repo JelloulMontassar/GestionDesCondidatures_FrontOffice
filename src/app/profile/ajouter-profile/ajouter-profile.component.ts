@@ -162,7 +162,7 @@ export class AjouterProfileComponent {
 
          
           this.privilegeService.saveAllPrivilege(listePrivileges).subscribe((data: any[]) => { 
-            this.router.navigate(["/Profile"]);
+            this.router.navigate(["/admin/Profile"]);
           });
         });
       }

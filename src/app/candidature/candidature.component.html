@@ -1,1 +1,85 @@
-<p>candidature works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="card-title">
+                        {{ 'Candidatures' | translate }}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="mat-elevation-z8">
+                        <div class="text-end">
+                            <mat-form-field appearance="outline">
+                                <mat-label>{{ 'Recherche' | translate }}</mat-label>
+                                <input matInput (keyup)="applyFilter($event)" placeholder="{{ 'Recherche' | translate }}">
+                            </mat-form-field>
+                        </div>
+                        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                            <!-- Nom Column -->
+                            <ng-container matColumnDef="nom">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'Nom' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">{{ element.nom }}</td>
+                            </ng-container>
+                            <!-- Prénom Column -->
+                            <ng-container matColumnDef="prenom">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'Prénom' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">{{ element.prenom }}</td>
+                            </ng-container>
+                            <!-- Etat Column -->
+                            <ng-container matColumnDef="etat">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'Etat' | translate }}</th>
+                                <td mat-cell *matCellDef="let element" class="etat-cell">
+                                    <span [ngClass]="{'label-green': element.etat === 1, 'label-yellow': element.etat === 0, 'label-red': element.etat === 2}">
+                                        {{ element.etat === 0 ? 'EnAttente' : element.etat === 1 ? 'Approuvé' : 'Rejeté' }}
+                                    </span>
+                                </td>
+                            </ng-container>
+                            <!-- Adresse Column -->
+                            <ng-container matColumnDef="adresse">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'Adresse' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">{{ element.adresse }}</td>
+                            </ng-container>
+                            <!-- Libellé Offre Column -->
+                            <ng-container matColumnDef="libelleOffre">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'Libellé Offre' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">{{ element.libelleOffre }}</td>
+                            </ng-container>
+                            <!-- Date d'Expiration Column -->
+                            <ng-container matColumnDef="dateExpiration">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'Date d\'Expiration' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">{{ element.dateExpiration | date:'shortDate' }}</td>
+                            </ng-container>
+                            <!-- Localisation Column -->
+                            <ng-container matColumnDef="localisation">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'Localisation' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">{{ element.localisation }}</td>
+                            </ng-container>
+                            <!-- Salaire Column -->
+                            <ng-container matColumnDef="salaire">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'Salaire' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">{{ element.salaire }}</td>
+                            </ng-container>
+                            <!-- Actions Column -->
+                            <ng-container matColumnDef="actions">
+                                <th mat-header-cell *matHeaderCellDef>{{ 'Actions' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">
+                                    <div class="action-buttons">
+                                        <button mat-button (click)="openCandidateDetailsDialog(element.candidat)">{{ 'Details' | translate }}</button>
+                                        <button mat-button class="label-green" style="color:white;" (click)="Accept(element)">{{ 'Valider' | translate }}</button>
+                                        <button mat-button class="label-red" style="color:white;" (click)="Refuse(element)">{{ 'Refuser' | translate }}</button>
+                                    </div>
+                                </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                        <mat-paginator [length]="dataSource.data.length" [pageSize]="4" showFirstLastButtons></mat-paginator>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

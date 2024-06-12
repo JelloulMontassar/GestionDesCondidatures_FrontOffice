@@ -94,7 +94,7 @@ export class ModifierPosteComponent {
       }else {
 
         this.posteService.modifierPoste(this.PosteForm.value).subscribe((data: any[]) => {
-          this.router.navigate(["/Poste"]);
+          this.router.navigate(["/admin/Poste"]);
         }); 
       }
     });

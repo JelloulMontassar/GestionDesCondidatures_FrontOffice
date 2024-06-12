@@ -71,7 +71,7 @@ export class ModifierDepartementComponent {
       }else {
 
         this.DepartementService.modifierDepartement(this.DepartementForm.value).subscribe((data: any[]) => {
-          this.router.navigate(["/Departement"]);
+          this.router.navigate(["/admin/Departement"]);
         }); 
       }
     });

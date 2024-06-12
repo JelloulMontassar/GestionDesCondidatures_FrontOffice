@@ -426,7 +426,7 @@ export class ModifierProfileComponent {
                 const encodedValue = window.btoa(JSON.stringify(data));
                 window.sessionStorage.setItem('utilisateur', encodedValue);
                 this.sessionService.updateSession(data);
-                this.router.navigate(["/Profile"]);
+                this.router.navigate(["/admin/Profile"]);
               });
             }
             else if (this.storageService.getUtilisateur().idEntrepriseEnCours != this.storageService.getUtilisateur().entreprise.id) {
@@ -440,12 +440,12 @@ export class ModifierProfileComponent {
                   const encodedValue = window.btoa(JSON.stringify(user));
                   window.sessionStorage.setItem('utilisateur', encodedValue);
                   this.sessionService.updateSession(data);
-                  this.router.navigate(["/Profile"]);
+                  this.router.navigate(["/admin/Profile"]);
                 });
               });
             }
             else {
-              this.router.navigate(["/Profile"]);
+              this.router.navigate(["/admin/Profile"]);
             }
           });
         });

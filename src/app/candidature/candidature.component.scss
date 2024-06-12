@@ -1,0 +1,79 @@
+/* General Styles */
+.container-fluid {
+  padding: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Status Labels */
+.label-green {
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.label-yellow {
+  background-color: #ffc107;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.label-red {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Table Styles */
+.mat-elevation-z8 {
+  overflow: auto;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+}
+
+.etat-cell {
+  width: 100px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button.mat-button {
+  margin-right: 5px;
+  padding: 5px 10px;
+}
+
+button.mat-button.label-green {
+  background-color: #28a745;
+  color: white;
+}
+
+button.mat-button.label-red {
+  background-color: #dc3545;
+  color: white;
+}

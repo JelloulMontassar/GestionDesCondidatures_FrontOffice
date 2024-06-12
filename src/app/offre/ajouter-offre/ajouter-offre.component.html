@@ -1,75 +1,131 @@
-<app-breadcrumb  [items]="['Offres' | translate]"
-  [active_item]="'ajouterOffre' | translate"></app-breadcrumb>
+<app-breadcrumb [items]="['Offres' | translate]"
+                [active_item]="'ajouterOffre' | translate"></app-breadcrumb>
 <div class="container-fluid">
-  <div class="card" style="height: 72vh;">
-    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
-      <div style="font-weight: bold; font-size: 24px;">
-        {{ 'Offre' | translate }}
-      </div>
-      <div>
-        <button ngbTooltip="{{ 'enregistrer' | translate}}" (click)="ajouterOffre()" class="btn  btn-sm"
-        [disabled]="OffreForm.invalid"
-        style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: cornflowerblue;  ">
-        <i class="fa fa-save fa-lg" style="color: cornflowerblue;  margin-left: -6px;"></i></button>
-      <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Offre']" class="btn  btn-sm"
-        style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
-        <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
-   </div>
-    </div>
-
-
-    <form class="form theme-form" [formGroup]="OffreForm">
-   
-      <div class="card-body">
-        <div class="row g-3">
-          <div class="col-md-6">
-            <div class="mb-3 row">
-              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'libelle' | translate}}:*</label>
-              <div class="col-sm-7">
-                <input class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
-                  formControlName="libelle" [ngClass]="{'is-invalid':libelle.errors && libelle.touched}" />
-                <div *ngIf="libelle.invalid && (libelle.dirty || libelle.touched)">
-                  <div *ngIf="libelle.errors.posteTaken" style="color: red;  font-weight: bold;">offre déjà pris</div>
-                  <div *ngIf="libelle.errors.required" style="color: red;  font-weight: bold;">champs obligatoire</div>
-                </div>
-              </div>
+    <div class="card" style="height: 72vh;">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-weight: bold; font-size: 24px;">
+                {{ 'Offre' | translate }}
             </div>
-            <div class="mb-3 row">
-              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'departement' | translate}}:*</label>
-              <div class="col-sm-7">
-                <ng-select [items]="DepartementItem"
-                  [ngClass]="{'is-invalid':departement.errors && departement.touched}" bindLabel="libelle"
-                  bindValue="libelle" formControlName="departement" placeholder="---"
-                  class="js-example-basic-single">
-                </ng-select>
-                <div *ngIf="departement.invalid && (departement.dirty || departement.touched)">
-                  <div *ngIf="departement.errors.required" style="color: red;  font-weight: bold;">champs obligatoire
-                  </div>
-                </div>
-              </div>
+            <div>
+                <button ngbTooltip="{{ 'enregistrer' | translate}}" (click)="ajouterOffre()" class="btn btn-sm"
+                        [disabled]="OffreForm.invalid"
+                        style="margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px; border-color: cornflowerblue;">
+                    <i class="fa fa-save fa-lg" style="color: cornflowerblue; margin-left: -6px;"></i></button>
+                <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/admin/Offre']" class="btn btn-sm"
+                   style="margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px; border-color: #7c8184;">
+                    <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
             </div>
-
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">{{ 'dateExpiration' | translate}}</label>
-                <div class="col-sm-7">
-                    <input class="form-control digits" type="date" formControlName="dateExpiration" />
-                </div>
-            </div>
-
-            <div class="mb-3 row">
-              <label class="col-sm-3 col-form-label" for="exampleFormControlInput5">{{ 'description' |
-                translate}}:</label>
-              <div class="col-sm-7">
-                <textarea class="form-control " id="exampleFormControlInput5" type="text" placeholder="---"
-                  formControlName="description"></textarea>
-              </div>
-          </div>
-          </div>
-          <div class="col-md-6">
-             
-          </div>
         </div>
-      </div>
-    </form>
-  </div>
+
+        <form class="form theme-form" [formGroup]="OffreForm">
+            <div class="card-body">
+                <div class="row g-3">
+                    <!-- Left Column -->
+                    <div class="col-md-6">
+                        <!-- Libelle -->
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="libelle">{{ 'libelle' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="libelle" type="text" placeholder="---"
+                                       formControlName="libelle" [ngClass]="{'is-invalid':libelle.errors && libelle.touched}" />
+                                <div *ngIf="libelle.invalid && (libelle.dirty || libelle.touched)">
+                                    <div *ngIf="libelle.errors.posteTaken" style="color: red; font-weight: bold;">offre déjà pris</div>
+                                    <div *ngIf="libelle.errors.required" style="color: red; font-weight: bold;">champs obligatoire</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Departement -->
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="departement">{{ 'departement' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <ng-select [items]="DepartementItem"
+                                           [ngClass]="{'is-invalid':departement.errors && departement.touched}" bindLabel="libelle"
+                                           bindValue="libelle" formControlName="departement" placeholder="---"
+                                           class="js-example-basic-single">
+                                </ng-select>
+                                <div *ngIf="departement.invalid && (departement.dirty || departement.touched)">
+                                    <div *ngIf="departement.errors.required" style="color: red; font-weight: bold;">champs obligatoire</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date Expiration -->
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="dateExpiration">{{ 'dateExpiration' | translate}}</label>
+                            <div class="col-sm-7">
+                                <input class="form-control digits" id="dateExpiration" type="date" formControlName="dateExpiration" />
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="description">{{ 'description' | translate}}:</label>
+                            <div class="col-sm-7">
+                                <textarea class="form-control" id="description" placeholder="---" formControlName="description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="col-md-6">
+                        <!-- Localisation -->
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="localisation">{{ 'localisation' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="localisation" type="text" placeholder="---" formControlName="localisation" />
+                                <div *ngIf="OffreForm.get('localisation').invalid && (OffreForm.get('localisation').dirty || OffreForm.get('localisation').touched)">
+                                    <div *ngIf="OffreForm.get('localisation').errors?.required" style="color: red; font-weight: bold;">champs obligatoire</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Salaire -->
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="salaire">{{ 'salaire' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="salaire" type="number" placeholder="---" formControlName="salaire" />
+                                <div *ngIf="OffreForm.get('salaire').invalid && (OffreForm.get('salaire').dirty || OffreForm.get('salaire').touched)">
+                                    <div *ngIf="OffreForm.get('salaire').errors?.required" style="color: red; font-weight: bold;">champs obligatoire</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Requirements -->
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="requirements">{{ 'requirements' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="requirements" type="text" placeholder="---" formControlName="requirements" />
+                                <div *ngIf="OffreForm.get('requirements').invalid && (OffreForm.get('requirements').dirty || OffreForm.get('requirements').touched)">
+                                    <div *ngIf="OffreForm.get('requirements').errors?.required" style="color: red; font-weight: bold;">champs obligatoire</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Type -->
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="type">{{ 'type' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="type" type="text" placeholder="---" formControlName="type" />
+                                <div *ngIf="OffreForm.get('type').invalid && (OffreForm.get('type').dirty || OffreForm.get('type').touched)">
+                                    <div *ngIf="OffreForm.get('type').errors?.required" style="color: red; font-weight: bold;">champs obligatoire</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefices -->
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label" for="benefices">{{ 'benefices' | translate}}:*</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="benefices" type="text" placeholder="---" formControlName="benefices" />
+                                <div *ngIf="OffreForm.get('benefices').invalid && (OffreForm.get('benefices').dirty || OffreForm.get('benefices').touched)">
+                                    <div *ngIf="OffreForm.get('benefices').errors?.required" style="color: red; font-weight: bold;">champs obligatoire</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

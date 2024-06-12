@@ -142,7 +142,7 @@ export class AjouterCandidatComponent {
             this.candidatService.saveCandidat(this.CandidatForm.value).subscribe((data: any[]) => {
             });
           }
-          this.router.navigate(["/Candidat"]);
+          this.router.navigate(["/admin/Candidat"]);
 
         }
       });

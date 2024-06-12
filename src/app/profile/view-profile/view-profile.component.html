@@ -7,11 +7,11 @@
     <div class="card-header text-end " style="justify-content : text-end ;">
 
 
-      <a *ngIf="privilege.modification" ngbTooltip="{{ 'modifier' | translate}}" [routerLink]="['/Profile/editProfile', ProfileItem?.id]"
+      <a *ngIf="privilege.modification" ngbTooltip="{{ 'modifier' | translate}}" [routerLink]="['/admin/Profile/editProfile', ProfileItem?.id]"
         class="btn  btn-sm"
         style="background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: orange;  ">
         <i class="fa fa-pencil fa-lg" style="color: orange; margin-top: 13px; margin-left: -6px;"></i></a>
-      <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/Profile']" class="btn  btn-sm"
+      <a ngbTooltip="{{ 'annuler' | translate}}" [routerLink]="['/admin/Profile']" class="btn  btn-sm"
         style=" margin-left: 20px; background-color: #f7f7f7; height: 50px; width: 50px; border: solid; border-width: 2px;  border-color: #7c8184;  ">
         <i class="fa fa-rotate-left fa-lg" style="color: gray; margin-top: 13px; margin-left: -6px;"></i></a>
 

@@ -32,16 +32,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.currentUser) {
-      this.router.navigate(["/"]);
+      this.router.navigate(["/admin"]);
     }
   }
 
   login() {
     this.authService.login(this.form.username, this.form.password).subscribe({
       next: data => {
-
-
-        if (data.utilisateur.idEntrepriseEnCours != data.utilisateur.entreprise.id) {
+        if (data.utilisateur.profile.libelle==="Super Admin") {
+          console.log(data.utilisateur.profile.libelle)
+          if (data.utilisateur.idEntrepriseEnCours != data.utilisateur.entreprise.id) {
           let user = data;
           const idEntrepriseEnCours = user.utilisateur.idEntrepriseEnCours;
           this.profileService.getSuperProfile(idEntrepriseEnCours).subscribe((dataProfile: any) => {
@@ -51,22 +51,28 @@ export class LoginComponent implements OnInit {
             this.isLoggedIn = true;
             if (data) {
               this.navService.updateMenuItems();
-              this.router.navigate(["/"]);
+              this.router.navigate(["/admin/Utilisateur"]);
               //window.location.reload();
             }
 
 
 
           });
+
         } else {
-          this.storageService.saveUser(data);
-          this.isLoginFailed = false;
-          this.isLoggedIn = true;
+            this.storageService.saveUser(data);
+            this.isLoginFailed = false;
+            this.isLoggedIn = true;
+          }
+
           if (data) {
             this.navService.updateMenuItems();
-            this.router.navigate(["/"]);
-            //window.location.reload();
+            this.router.navigate(["/admin/Utilisateur"]);
           }
+        }
+        else if (data.utilisateur.profile.libelle==="Candidat") {
+          this.router.navigate(["/home"]);
+          this.storageService.saveUser(data);
         }
 
 
