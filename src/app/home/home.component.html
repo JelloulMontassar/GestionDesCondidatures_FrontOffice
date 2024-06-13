@@ -1,0 +1,57 @@
+<app-header-home></app-header-home>
+
+<section class="search-section">
+    <div class="container search-container">
+        <div class="search-content">
+            <h2>Searching for a job?</h2>
+            <h3>Find the <span>best startup</span> job that fit you</h3>
+        </div>
+        <div class="hero-image">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/we-are-hiring-2645886-2218311.png" alt="Hero Image">
+        </div>
+    </div>
+</section>
+
+
+
+<section class="jobs-section">
+    <div class="container">
+        <div class="search-bar">
+            <form class="search-form">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Job Title or Keyword</mat-label>
+                    <input matInput #libelleInput>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Location</mat-label>
+                    <input matInput #localisationInput>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Description</mat-label>
+                    <input matInput #descriptionInput>
+                </mat-form-field>
+                <button mat-raised-button class="search-button" (click)="onSearch(libelleInput.value, localisationInput.value, descriptionInput.value)">Search Job</button>
+            </form>
+        </div>
+        <h2>Discover jobs for you</h2>
+        <p>Browse 200+ Top Jobs In Your Local City.</p>
+        <nav class="categories">
+            <ul>
+                <li><a class="active">All Categories</a></li>
+
+            </ul>
+        </nav>
+        <div class="job-listings">
+            <div class="job-card" *ngFor="let job of jobs" (click)="showLoginSignupPrompt(job.id)">
+                <div class="tag">{{ job.type }}</div>
+                <h3>{{ job.libelle }}</h3>
+                <p><span class="location-icon">📍</span> {{ job.localisation }} <span class="dot">•</span> Full Time</p>
+                <div class="company-info">
+                    <p>📅 {{ job.dateExpiration | date:'shortDate' }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer-home></app-footer-home>

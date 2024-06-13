@@ -1,0 +1,47 @@
+<app-header-home></app-header-home>
+<section class="main-section">
+    <div class="container">
+        <div class="left-section">
+            <div class="upload-card">
+                <h2>Upload CV</h2>
+                <div *ngIf="cvPath" class="current-cv">
+                    <p>Current CV: <a [href]="cvPath" target="_blank">View CV</a></p>
+                </div>
+                <form (ngSubmit)="onCvUpload()" class="upload-form">
+                    <div class="drop-zone">
+                        <input type="file" id="fileUpload" (change)="onFileSelected($event)" required>
+                        <label for="fileUpload">Drop your files here, or <span>Browse</span></label>
+                    </div>
+                    <button type="submit" [disabled]="!selectedFile" class="submit-btn">Upload CV</button>
+                </form>
+                <div *ngIf="uploadProgress >= 0" class="progress-bar">
+                    <progress [value]="uploadProgress" max="100"></progress>
+                    <span>{{ uploadProgress }}%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="signup-card" *ngIf="candidateForm">
+                <h2>Edit Candidate Information</h2>
+                <form [formGroup]="candidateForm" (ngSubmit)="onSubmit()" class="signup-form">
+                    <div class="form-group">
+                        <input formControlName="prenom" type="text" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="nom" type="text" placeholder="Last Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input formControlName="adresse" type="text" placeholder="Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="dateNaissance" type="date" placeholder="Date of Birth" required>
+                    </div>
+                    <button type="submit" [disabled]="candidateForm.invalid" class="submit-btn">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer-home></app-footer-home>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6200d477-40a5-47b6-a620-24c60bf10f7d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/calendrier/CalendarEvent.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/calendrier/EventColor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/calendrier/calender-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/calendrier/calender.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/calendrier/calender.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/calendrier/calender.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/calendrier/calender.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/logo/newlogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/logo/newlogo_dark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/login/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/login/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/login/login.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/calendrier/calendrier-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/calendrier/calendrier.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/calendrier/calendrier.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jwt-utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/calendrier/calendrier.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/calendrier/calendrier.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/candidat/ajouter-candidat/ajouter-candidat.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/candidat/ajouter-candidat/ajouter-candidat.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/candidat/ajouter-candidat/ajouter-candidat.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/candidat/ajouter-candidat/ajouter-candidat.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/candidat/candidat.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/candidat/candidat.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/candidat/candidat.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/candidat/candidat.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/candidature/candidature.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/candidature/candidature.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/candidature/candidature.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/candidature/candidature.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/candidature/candidature.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/candidature/candidature.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/departement/ajouter-departement/ajouter-departement.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/departement/ajouter-departement/ajouter-departement.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/departement/departement.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/departement/departement.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/departement/departement.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/departement/departement.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/departement/modifier-departement/modifier-departement.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/departement/modifier-departement/modifier-departement.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/departement/view-departement/view-departement.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/departement/view-departement/view-departement.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/domaine/ajouter-domaine/ajouter-domaine.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/domaine/ajouter-domaine/ajouter-domaine.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/domaine/ajouter-domaine/ajouter-domaine.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/domaine/ajouter-domaine/ajouter-domaine.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/domaine/domaine.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/domaine/domaine.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/domaine/domaine.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/domaine/domaine.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/domaine/modifier-domaine/modifier-domaine.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/domaine/modifier-domaine/modifier-domaine.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/domaine/modifier-domaine/modifier-domaine.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/domaine/modifier-domaine/modifier-domaine.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/domaine/view-domaine/view-domaine.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/domaine/view-domaine/view-domaine.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/entreprise/ajouter-entreprise/ajouter-entreprise.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/entreprise/ajouter-entreprise/ajouter-entreprise.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/entreprise/ajouter-entreprise/ajouter-entreprise.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/entreprise/ajouter-entreprise/ajouter-entreprise.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/entreprise/entreprise.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/entreprise/entreprise.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/entreprise/entreprise.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/entreprise/entreprise.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/entreprise/modifier-entreprise/modifier-entreprise.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/entreprise/modifier-entreprise/modifier-entreprise.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/entreprise/modifier-entreprise/modifier-entreprise.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/entreprise/modifier-entreprise/modifier-entreprise.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/entreprise/view-entreprise/view-entreprise.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/entreprise/view-entreprise/view-entreprise.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/offre/ajouter-offre/ajouter-offre.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/offre/ajouter-offre/ajouter-offre.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/offre/ajouter-offre/ajouter-offre.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/offre/ajouter-offre/ajouter-offre.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/offre/offre.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/offre/offre.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/offre/offre.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/offre/offre.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/poste/ajouter-poste/ajouter-poste.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/poste/ajouter-poste/ajouter-poste.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/poste/ajouter-poste/ajouter-poste.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/poste/ajouter-poste/ajouter-poste.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/poste/modifier-poste/modifier-poste.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/poste/modifier-poste/modifier-poste.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/poste/poste.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/poste/poste.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/poste/poste.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/poste/poste.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/poste/view-poste/view-poste.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/poste/view-poste/view-poste.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/profile/ajouter-profile/ajouter-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/ajouter-profile/ajouter-profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/profile/modifier-profile/modifier-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/modifier-profile/modifier-profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/profile/view-profile/view-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/view-profile/view-profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/candidat.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/candidat.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/service/offre.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/service/offre.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/components/header/header.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/header/header.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/routes/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/routes/routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/services/layout.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/services/layout.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/services/nav.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/services/nav.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utilisateur/ajouter-utilisateur/ajouter-utilisateur.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utilisateur/ajouter-utilisateur/ajouter-utilisateur.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utilisateur/modifier-utilisateur/modifier-utilisateur.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utilisateur/modifier-utilisateur/modifier-utilisateur.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utilisateur/utilisateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utilisateur/utilisateur.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utilisateur/utilisateur.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utilisateur/utilisateur.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utilisateur/view-utilisateur/view-utilisateur.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utilisateur/view-utilisateur/view-utilisateur.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/vendors/date-picker/_all-in-one.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/vendors/date-picker/_all-in-one.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/vendors/flag-icon/_flag-icon-base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/vendors/flag-icon/_flag-icon-base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/vendors/svg-icon/_svg-icon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/vendors/svg-icon/_svg-icon.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/vendors/themify/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/vendors/themify/_core.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/vendors/themify/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/vendors/themify/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/vendors/themify/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/vendors/themify/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/scss/vendors/whether-icon/_whether-icon.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/vendors/whether-icon/_whether-icon.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tslint.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JelloulMontassar&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/imen321/GestionDesCondidatures_FrontOffice&quot;,
+    &quot;accountId&quot;: &quot;368225fe-0e09-48ca-8e99-90187f2ad2c5&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2hFveePLauTWS7RRMorndvhJAyK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/21629/Desktop/HeroCircle&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\21629\Desktop\GestionDesCondidatures_FrontOfficeFFF\src\assets\images\logo" />
+      <recent name="C:\Users\21629\Desktop\GestionDesCondidatures_FrontOfficeFFF\src\app" />
+      <recent name="C:\Users\21629\Desktop\GestionDesCondidatures_FrontOfficeFFF\src\app\calendrier" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests (cuba)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (cuba)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6200d477-40a5-47b6-a620-24c60bf10f7d" name="Changes" comment="" />
+      <created>1717202740202</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717202740202</updated>
+      <workItem from="1717202742036" duration="21701000" />
+      <workItem from="1717258697195" duration="13266000" />
+      <workItem from="1717448445484" duration="1496000" />
+      <workItem from="1717498037746" duration="1914000" />
+      <workItem from="1717580699236" duration="583000" />
+      <workItem from="1717623646413" duration="797000" />
+      <workItem from="1717624724635" duration="24484000" />
+      <workItem from="1717743884277" duration="4103000" />
+      <workItem from="1717800817013" duration="11706000" />
+      <workItem from="1718116795349" duration="680000" />
+      <workItem from="1718231257107" duration="297000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

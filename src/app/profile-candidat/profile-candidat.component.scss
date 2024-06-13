@@ -1,0 +1,249 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.logo img {
+  max-height: 50px; /* Adjust the height as needed */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.job-now button {
+  background-color: #4b56f0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* Main Section */
+.main-section {
+  padding: 50px 0;
+  background-color: #eef1ff;
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.left-section {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.right-section {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+}
+
+/* Upload Card */
+.upload-card {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.upload-card h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #4b56f0;
+}
+
+.upload-card .current-cv {
+  margin-bottom: 20px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-form .form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.upload-form input[type="file"] {
+  display: none;
+}
+
+.upload-form label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 40px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background-color: #fafafa;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-form label span {
+  color: #4b56f0;
+}
+
+.upload-form label:hover {
+  background-color: #f0f0f0;
+}
+
+.progress-bar {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.progress-bar progress {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.progress-bar span {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Signup Section */
+.signup-card {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.signup-card h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #4b56f0;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-form .form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: #4b56f0;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #4b56f0;
+  color: white;
+  padding: 50px 0;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.footer-section p {
+  font-size: 14px;
+  color: #d1d1e9;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #d1d1e9;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: white;
+}

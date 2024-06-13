@@ -1,0 +1,275 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.logo img {
+  max-height: 100px; /* Adjust the height as needed */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.job-now button {
+  background-color: #4b56f0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.search-section {
+  background-color: #eef1ff;
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+.search-section .container {
+  flex-direction: column;
+}
+
+.search-content {
+  z-index: 2;
+}
+
+.search-section h2 {
+  font-size: 36px;
+  margin: 0 0 10px 0;
+}
+
+.search-section h3 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}
+
+.search-section h3 span {
+  color: #4b56f0;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-form input {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-form button {
+  background-color: #4b56f0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.hero-image {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.jobs-section {
+  background-color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.jobs-section h2 {
+  font-size: 32px;
+  margin: 0 0 10px 0;
+  color: #4b56f0;
+}
+
+.jobs-section p {
+  color: #777;
+  font-size: 16px;
+  margin: 0 0 30px 0;
+}
+
+.categories ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.categories ul li {
+  margin: 0 10px;
+}
+
+.categories ul li a {
+  text-decoration: none;
+  color: #777;
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+}
+
+.categories ul li a.active,
+.categories ul li a:hover {
+  color: #4b56f0;
+  border-bottom: 2px solid #4b56f0;
+}
+
+.job-listings {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.job-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.job-card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.job-card .tag {
+  display: inline-block;
+  background-color: #eef1ff;
+  color: #4b56f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.job-card h3 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.job-card p {
+  margin: 5px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.company-info img {
+  max-height: 30px;
+  margin-right: 10px;
+}
+
+.location-icon {
+  margin-right: 5px;
+}
+
+.dot {
+  margin: 0 5px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #4b56f0;
+  color: white;
+  padding: 50px 0;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.footer-section p {
+  font-size: 14px;
+  color: #d1d1e9;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #d1d1e9;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: white;
+}

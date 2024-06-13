@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{ 'Candidate Details' | translate }}</h1>
+<div mat-dialog-content>
+    <p><strong>{{ 'Nom' | translate }}:</strong> {{ data.candidat.nom }}</p>
+    <p><strong>{{ 'Prénom' | translate }}:</strong> {{ data.candidat.prenom }}</p>
+    <p><strong>{{ 'Adresse' | translate }}:</strong> {{ data.candidat.adresse }}</p>
+    <p><strong>{{ 'Date de Naissance' | translate }}:</strong> {{ data.candidat.dateNaissance | date:'shortDate' }}</p>
+    <p><strong>{{ 'Email' | translate }}:</strong> {{ data.candidat.email }}</p>
+    <p><strong>{{ 'Téléphone' | translate }}:</strong> {{ data.candidat.gsm }}</p>
+    <p><strong>{{ 'CV' | translate }}:</strong> <a [href]="data.candidat.cvPath" target="_blank">{{ data.candidat.cvPath }}</a></p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>{{ 'Close' | translate }}</button>
+</div>
